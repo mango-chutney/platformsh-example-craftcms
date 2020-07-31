@@ -20,7 +20,21 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
+    "claviska/simpleimage": "^3.3",
     "craftcms/cms": "3.4.10",
+    "craftcms/contact-form-honeypot": "^1.0",
+    "craftcms/contact-form": "^2.0.2",
+    "craftcms/element-api": "^2.4",
+    "craftcms/redactor": "^2.3.3.2",
+    "doublesecretagency/craft-cpcss": "^2.2",
+    "ether/simplemap": "^3.6.4.3",
+    "nystudio107/craft-minify": "^1.2",
+    "nystudio107/craft-seomatic": "^3.2",
+    "sebastianlenz/linkfield": "^2.0@beta",
+    "setasign/fpdf": "1.8.2",
+    "twig/twig": "^2.6.2",
+    "verbb/expanded-singles": "^1.0",
+    "verbb/super-table": "^2.3",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
