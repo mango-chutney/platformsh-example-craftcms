@@ -20,6 +20,7 @@
   },
   "minimum-stability": "beta",
   "require": {
+    "clubstudioltd/craft-asset-rev": "^6.0.2",
     "php": ">=7.0.0",
     "craftcms/cms": "^3.4.25",
     "vlucas/phpdotenv": "^3.4.0",

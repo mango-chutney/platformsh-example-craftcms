@@ -43,3 +43,11 @@ web:
             # The front-controller script to send non-static requests to.
             passthru: "/index.php"
 
+dependencies:
+  nodejs:
+    yarn: "*"
+
+hooks:
+  build: |
+    yarn install
+    yarn run webpack:build
