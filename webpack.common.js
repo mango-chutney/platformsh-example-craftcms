@@ -69,7 +69,7 @@ module.exports = {
           flatten: true,
         },
       ],
-      {
+      options: {
         copyUnmodified: true,
       },
     }),
