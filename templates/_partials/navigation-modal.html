@@ -1,0 +1,52 @@
+{% import _self as navigationModal %}
+
+{% macro recursiveChildren(navigationItem) %}
+  <div class="navigation-modal-link-toggle">
+    <a class="navigation-modal-header">
+      {{ navigationItem.title }}
+    </a>
+    <ul class="navigation-modal-list">
+      {% if navigationItem.getDescendants().count() != 0 %}
+        <li>
+          {% for subnavigationItem in navigationItem.children.all() %}
+            <a {{
+              subnavigationItem.navigationLink.getLinkAttributes({
+                class: [
+                  'navigation-modal-link',
+                ]
+              })
+            }}>
+              {{ subnavigationItem.navigationLink.getText() }}
+            </a>
+          {% endfor %}
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+{% endmacro %}
+
+<div id="navigation-modal">
+<div class="navigation-modal-close-overlay js-toggle-navigation">
+</div>
+<div class="navigation-modal-wrapper">
+  <div>
+    <a href="/" class="navigation-modal-header">
+      Home
+    </a>
+  </div>
+    {% nav navigationItem in craft.entries.section('navigation').level('<= 1').all() %}
+      {{ navigationModal.recursiveChildren(navigationItem) }}
+    {% endnav %}
+  <div class="navigation-modal-buttons">
+    <a href="#signup" class="button secondary navigation-button expanded particles">
+      <i class="tristicon tristicon-star"></i>Sign up
+    </a>
+    <a href="{{ craft.app.config.general.constants.artezEventURL }}/registrant/startup.aspx?eventid={{ craft.app.config.general.constants.artezEventId }}&getpage=tabbedIndividualSearch" class="button primary navigation-button expanded particles" target="_blank" rel="noopener noreferrer">
+      <i class="tristicon tristicon-heart"></i>Donate
+    </a>
+    <a href="{{ craft.app.config.general.constants.artezEventURL }}/registrant/startup.aspx?eventid={{ craft.app.config.general.constants.artezEventId }}" class="button white hollow navigation-button expanded particles" target="_blank" rel="noopener noreferrer">
+      <i class="tristicon tristicon-lock"></i>Log in
+    </a>
+  </div>
+</div>
+</div>

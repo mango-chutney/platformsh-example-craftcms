@@ -1,0 +1,25 @@
+{% extends '_layouts/default' %}
+
+{% set slug = 'unsubscribed' %}
+{% do seomatic.meta.seoTitle("Unsubscribed") %}
+
+
+{% block content %}
+  {% cache globally using key 'unsubscribed-content' %}
+  {% minify %}
+    <div class="padding-top-xlarge background-gray">
+      <div class="row padding-top-large">
+        <div class="column medium-8 medium-centered text-center">
+          <div class="padding-large">
+            <h2>Unsubscribed</h2>
+            <h4 class="title">You've been successfully removed from the mailing list</h4>
+            <div>
+              <a href="/" class="button large wide">Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}

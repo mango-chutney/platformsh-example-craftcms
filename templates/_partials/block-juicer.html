@@ -1,0 +1,53 @@
+{% if entry.slug == 'home' %}
+  <div class="margin-large">
+    <div class="row">
+      <div class="columns">
+        <div class="heading-wrapper">
+          <h1>
+            Check out our superheroes!
+          </h1>
+          <h3 class="subheading">
+            <a href="https://www.instagram.com/explore/tags/worldsgreatestshave/" target="_blank" rel="noopener noreferrer">
+              #worldsgreatestshave
+            </a>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="stackla-widget" data-ct="" data-hash="5ef03ff9f23b8" data-id="71540" data-title="WGS Homepage Grid" data-ttl="60" style="width: 100%; overflow: hidden;"></div>
+    <script type="text/javascript">
+      (function (d, id) {
+        var t, el = d.scripts[d.scripts.length - 1].previousElementSibling;
+        if (el) el.dataset.initTimestamp = (new Date()).getTime();
+        if (d.getElementById(id)) return;
+        t = d.createElement('script');
+        t.src = '//assetscdn.stackla.com/media/js/widget/fluid-embed.js';
+        t.id = id;
+        (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(t);
+      }(document, 'stackla-widget-js'));
+    </script>
+    <div class="margin-medium text-center">
+      <div class="row">
+        <div class="columns">
+          <a href="/social" class="button primary large wide">
+            View all
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="stackla-widget" data-ct="" data-hash="5ef04f4983561" data-id="71543" data-title="WGS Social Page Grid"
+    data-ttl="60" style="width: 100%; overflow: hidden;"></div>
+  <script type="text/javascript">
+    (function (d, id) {
+      var t, el = d.scripts[d.scripts.length - 1].previousElementSibling;
+      if (el) el.dataset.initTimestamp = (new Date()).getTime();
+      if (d.getElementById(id)) return;
+      t = d.createElement('script');
+      t.src = '//assetscdn.stackla.com/media/js/widget/fluid-embed.js';
+      t.id = id;
+      (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(t);
+    }(document, 'stackla-widget-js'));
+  </script>
+{% endif %}

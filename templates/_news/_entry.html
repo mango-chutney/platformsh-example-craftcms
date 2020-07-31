@@ -1,0 +1,38 @@
+{% extends '_layouts/default' %}
+
+{% set title = entry.title %}
+{% set slug = "news" %}
+
+{% block content %}
+  {% cache globally using key (craft.app.request.pathInfo ~ '-content') %}
+    {% minify %}
+      <div class="news-post-wrapper">
+        {% if entry.newsFeatureImage | length %}
+          <div class="news-post-feature-image-wrapper">
+            <div class="row">
+              <div class="columns">
+                <div class="">
+                  <div class="news-post-feature-image" style="background-image: url({{ entry.newsFeatureImage.one().url }})"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="content-block">
+          <div class="row content-row">
+            <div class="columns">
+              <div class="news-post-content-wrapper">
+                {{ entry.newsContent }}
+                <div class="news-post-back">
+                  <p>
+                    <a href="/news">Back to news</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endminify %}
+  {% endcache %}
+{% endblock %}

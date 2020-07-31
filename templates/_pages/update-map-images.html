@@ -1,0 +1,35 @@
+{% do seomatic.tag.get("robots").content("none") %}
+{% do seomatic.meta.seoTitle("Update map images") %}
+
+{% requireLogin %}
+
+{% extends '_layouts/default' %}
+
+{% set title = 'Update map images' %}
+{% set slug = 'update-map-images' %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+  {% cache globally using key (craft.app.request.pathInfo ~ '-content') %}
+  {% minify %}
+    {% include '_partials/secondary-page-header' %}
+    <div class="padding-large">
+      <div class="row">
+        <div class="columns">
+          <div id="update-map-images">
+          </div>
+          <p>
+            <a href="/events"><< Back to events</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}
+
+{% block foot_additional %}
+  <script src="/assets/update-map-images.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+{% endblock %}

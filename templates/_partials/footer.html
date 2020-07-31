@@ -1,0 +1,105 @@
+{% import _self as footer %}
+
+{% macro recursiveChildren(navigationItem) %}
+  {% if navigationItem.navigationLink | length %}
+    <ul class="footer-navigation-list">
+      <li>
+        <a
+          {{
+            navigationItem.navigationLink.getLinkAttributes({
+              class: ['footer-header']
+            })
+          }}
+        >
+          {{ navigationItem.navigationLink.getText() }}
+        </a>
+      </li>
+      {% if navigationItem.getDescendants().count() != 0 %}
+        {% for subnavigationItem in navigationItem.children.all() %}
+          <li>
+            <a
+              {{
+                subnavigationItem.navigationLink.getLinkAttributes({
+                  class: ['footer-subnavigation-link']
+                })
+              }}
+            >
+              {{ subnavigationItem.navigationLink.getText() }}
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+<div class="footer-registration-container">
+  <div class="footer-registration-row">
+    <div class="heading-wrapper hide-for-medium-only hide-for-small-only">
+      <h1>Sign up for World's Greatest Shave</h1>
+      <h3 class="subheading">
+        Shave your hair and help Aussie families beat blood cancer.
+      </h3>
+    </div>
+    <a class="footer-registration-button button secondary particles" href="#signup">Sign up</a>
+  </div>
+</div>
+<div class="footer-animation-wrapper">
+  <div class="footer-animation-container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<footer class="footer-wrapper">
+  <div class="row">
+    <div class="columns">
+      <div class="footer-container">
+        <div class="footer-lf-container">
+          <a href="https://www.leukaemia.org.au/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/logo-lf.svg?v=1" alt="Leukaemia Foundation"/>
+          </a>
+        </div>
+        <div class="footer-navigation-container">
+          <div class="footer-navigation">
+            {% nav navigationItem in craft.entries.section('navigation').level('<= 1').all() %}
+              {{ footer.recursiveChildren(navigationItem) }}
+            {% endnav %}
+            <ul class="footer-navigation-list">
+              <li>
+                <a href="https://leukaemiashop.myshopify.com/collections/worlds-greatest-shave" class="footer-header" target="_blank" rel="noopener noreferrer">
+                  Online Shop
+                </a>
+              </li>
+              <li>
+                <a href="https://leukaemiashop.myshopify.com/collections/worlds-greatest-shave" class="footer-subnavigation-link" target="_blank" rel="noopener noreferrer">
+                  Buy merchandise
+                </a>
+              </li>
+            </ul>
+            <ul class="footer-navigation-list">
+              <li class="footer-header">Contact Us</li>
+              <li>
+                Leukaemia Foundation
+                <br/>GPO Box 9954
+                <br/>BRISBANE 4001
+                <br/><a href="tel:1800500088" class="footer-subnavigation-link">1800 500 088</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-social-wrapper">
+            <a href="https://www.facebook.com/LeukaemiaFoundationWorldsGreatestShave" target="_blank" rel="noopener noreferrer"><i class="tristicon tristicon-facebook" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/worldsgreatestshave" target="_blank" rel="noopener noreferrer"><i class="tristicon tristicon-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/watch?v=WeqAATcfQ2A&amp;list=PLGTucLKzQQJferC28EQieFcIKajnNATxX" target="_blank" rel="noopener noreferrer"><i class="tristicon tristicon-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mangochutney-container">
+    <div class="columns">
+      <a href="http://www.mangochutney.com.au" title="Website by Mango Chutney Design Adelaide" target="_blank" rel="noopener noreferrer" id="websitebymangochutney" class="mangochutney">Website by Mango Chutney Design Adelaide</a>
+    </div>
+  </div>
+</footer>

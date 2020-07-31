@@ -1,0 +1,60 @@
+<div class="margin-large">
+  <div class="row content-row">
+    <div class="columns medium-8">
+      <h2>
+        Contact Us
+      </h2>
+      <h4>
+        Fill out the form below and we'll get in contact with you as soon as possible!
+      </h4>
+      <div id="contact-form-wrapper" class="contact-form-wrapper margin-medium">
+        <form class="contact-form form" method="post" action="" accept-charset="UTF-8">
+          {{ csrfInput() }}
+          <input type="hidden" name="action" value="contact-form/send">
+          <input type="hidden" id="from-email" name="fromEmail" value="{{ 'wgs.donotreply@leukaemia.org.au' }}" />
+          <input type="hidden" id="prependSender" name="prependSender" value="">
+          <input type="hidden" id="prependSubject" name="prependSubject" value="">
+          <input type="hidden" id="subject" name="subject"
+            value="Contact Form Enquiry | World's Greatest Shave Site">
+          <input id="chimeric-span-salute-bazaar" name="chimeric-span-salute-bazaar" type="text">
+          <label>Name
+            <input type="text" id="from-name" name="fromName" placeholder="Name" required />
+          </label>
+          <label>Email
+            <input type="email" name="message[Email]" id="email" placeholder="Email" required />
+          </label>
+          <label>Phone
+            <input type="tel" name="message[Phone]" id="phone" placeholder="Phone" required />
+          </label>
+          <label>State
+            <select id="to-email" name="message[State]" required>
+              {% include '_partials/state-contacts' %}
+            </select>
+          </label>
+          <label>Message
+            <textarea id="message" name="message[body]" placeholder="Message" rows="10" required></textarea>
+          </label>
+          <p class="text-right">
+            <button class="button large wide contact-submit" type="submit">
+              <span>Send Enquiry</span>
+            </button>
+          </p>
+          <div class="contact-feedback">
+            <p>
+              Your enquiry has been sent!
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="columns medium-4">
+      <h6>Prefer to call or send a letter?</h6>
+      <p>
+        Phone: 1800 500 088<br />
+        Address: Leukaemia Foundation<br />
+        GPO Box 9954<br />
+        IN YOUR CAPITAL CITY
+      </p>
+    </div>
+  </div>
+</div>

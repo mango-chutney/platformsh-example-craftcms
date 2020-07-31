@@ -1,0 +1,24 @@
+{% if entry.hasDescendants() %}
+  {% if entry.contentBlocks1 is empty %}
+    {% redirect entry.getChildren().one().url %}
+  {% endif%}
+{% endif %}
+
+{% extends '_layouts/default' %}
+
+{% block content %}
+  {% cache globally using key (craft.app.request.pathInfo ~ '-content') for 1 day %}
+    {% minify %}
+      {% include '_partials/hero-page' %}
+        <div class="content-blocks-container">
+          {% include '_partials/content-blocks' %}
+          {% switch entry.type %}
+            {% case 'news' %}
+              {% include '_partials/news' %}
+            {% case 'events' %}
+              {% include '_partials/events' %}
+          {% endswitch %}
+        </div>
+      {% endminify %}
+  {% endcache %}
+{% endblock %}

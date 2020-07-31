@@ -1,0 +1,31 @@
+<div class="content-block feature-icons-wrapper">
+  <div class="feature-icons-wrapper-inner">
+    <div class="row">
+      <div class="columns">
+        <div class="feature-icons-container">
+          {% for icon in block.icons.limit(4).with(['icons']).limit(4).all() %}
+            <div class="feature-icon-container">
+              <div class="feature-icon">
+                <a {{icon.iconUrl.getLinkAttributes()}} class="feature-icon-link">
+                  <div class="feature-icon-image-container">
+                    <div class="feature-icon-image-inner">
+                      <img
+                        src="{% if icon.iconImage | length %}{{ icon.iconImage[0].url }}{% endif %}"
+                        class="feature-icon-image"
+                        alt="{{ icon.iconHeading }}"
+                      />
+                    </div>
+                  </div>
+                  <div class="feature-icon-content-container">
+                    <h4>{{ icon.iconHeading }}</h4>
+                    <p>{{ icon.iconDescription }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

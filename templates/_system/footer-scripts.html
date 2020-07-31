@@ -1,0 +1,41 @@
+
+  <script src="/assets/vendor.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+  <script src="/assets/main.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+  {% if entry is defined %}
+    {% if entry.slug == 'home' %}
+      <script type="text/javascript">
+          (function (o) { var b = "https://api.autopilothq.com/anywhere/", t = "bdb933e9ae2749c7b0b24bbc8e9438a54c4c49dc54ad44d3a93a94f287981897", a = window.AutopilotAnywhere = { _runQueue: [], run: function () { this._runQueue.push(arguments); } }, c = encodeURIComponent, s = "SCRIPT", d = document, l = d.getElementsByTagName(s)[0], p = "t=" + c(d.title || "") + "&u=" + c(d.location.href || "") + "&r=" + c(d.referrer || ""), j = "text/javascript", z, y; if (!window.Autopilot) window.Autopilot = a; if (o.app) p = "devmode=true&" + p; z = function (src, asy) { var e = d.createElement(s); e.src = src; e.type = j; e.async = asy; l.parentNode.insertBefore(e, l); }; y = function () { z(b + t + '?' + p, true); }; if (window.attachEvent) { window.attachEvent("onload", y); } else { window.addEventListener("load", y, false); } })({});
+      </script>
+      {% if ticker.tickerEnabled  %}
+        <script src="/assets/ticker.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+      {% endif %}
+    {% endif %}
+    {% switch entry.type %}
+      {% case 'events' %}
+        <script src="/assets/events.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+      {% case 'contact' %}
+        <script src="/assets/contact.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+    {% endswitch %}
+    {% if entry.contentBlocks1|length %}
+      {% for block in entry.contentBlocks1.all() %}
+        {% switch block.appId %}
+          {% case 'school-leaderboards' %}
+            <script src="/assets/school-leaderboards.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'work-leaderboards' %}
+            <script src="/assets/work-leaderboards.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'volunteer' %}
+            <script src="/assets/volunteer-leaderboard.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'top-leaderboards' %}
+            <script src="/assets/top-leaderboards.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'campaign' %}
+            <script src="/assets/campaign.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'contact-us' %}
+            <script src="/assets/contact-form.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'faqs' %}
+            <script src="/assets/faqs.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+          {% case 'downloads' %}
+            <script src="/assets/downloads.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+        {% endswitch %}
+      {% endfor %}
+    {% endif %}
+{% endif %}

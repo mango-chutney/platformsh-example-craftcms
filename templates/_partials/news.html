@@ -1,0 +1,24 @@
+<div class="excerpt-container row small-up-1 medium-up-2 large-up-3 margin-large">
+  {% paginate craft.entries.section('newsPosts').limit(12).with(['newsImages']).limit(12) as pageInfo, pageEntries %}
+  {% for entry in pageEntries %}
+    <div class="excerpt-item-container column column-block">
+      <div class="excerpt">
+        <a href="{{ entry.url }}">
+          <div class="excerpt-image-container" style="background-image: url({% if entry.newsFeatureImage | length %} {{ entry.newsFeatureImage.one().url }} {% endif %});">
+          </div>
+        </a>
+        <div class="excerpt-content">
+          <h4 class="excerpt-title text-black">
+            {{ entry.title }}
+          </h4>
+          <p class="excerpt-text">
+            {{ entry.newsContent|striptags|slice(0,200)|raw}}...
+          </p>
+          <div class="excerpt-button-container">
+            <a class="button primary expanded" href="{{ entry.url }}">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,41 @@
+{% do seomatic.tag.get("robots").content("none") %}
+{% do seomatic.meta.seoTitle("Fundraise letter") %}
+
+{% extends '_layouts/default' %}
+
+{% set slug = 'pdf-authority-to-fundraise' %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+  {% cache globally using key (craft.app.request.pathInfo ~ '-content') %}
+  {% minify %}
+    {% include '_partials/secondary-page-header' %}
+    <div class="padding-large">
+      <div class="row">
+        <div class="columns">
+          <div class="box-medium">
+            <h4 class="title">
+              Create an Authority To Fundraise letter
+            </h4>
+            <form method="get" action="/api/pdf-authority-to-fundraise.php">
+              <dl>
+                <dt><label for="firstname">First Name</label></dt>
+                <dd><input name="firstname" id="firstname" class="input" tabindex="1" type="text" maxlength="25"></dd>
+                <dt><label for="lastname">Last Name</label></dt>
+                <dd><input name="lastname" id="lastname" class="input" tabindex="1" type="text" maxlength="25"></dd>
+                <dt><label for="regid">Reg ID</label></dt>
+                <dd><input name="regid" id="regid" class="input" tabindex="1" type="text" maxlength="25"></dd>
+                <dt><label for="expirydate">Expiry Date</label></dt>
+                <dd><input name="expirydate" id="expirydate" class="input" tabindex="1" type="text" maxlength="25"></dd>
+                <dd><button class="button large wide" tabindex="5" type="submit" height="40" width="93">Submit</button></dd>
+              </dl>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}

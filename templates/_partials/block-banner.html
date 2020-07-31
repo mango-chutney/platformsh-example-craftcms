@@ -1,0 +1,48 @@
+<div class="content-block banner-wrapper background-{{ block.backgroundColour }} overflow text-white">
+  <div class="row">
+    <div class="column">
+      <div class="banner-container">
+        <div class="row banner-image-container right">
+          <div class="columns large-6">
+            <div class="banner-content">
+              <h2 class="banner-title">
+                {{ block.bannerTitle }}
+              </h2>
+              {% if block.bannerSubtitle | length %}
+                <h5 class="banner-subtitle">
+                  {{ block.bannerSubtitle|nl2br }}
+                </h5>
+              {% endif %}
+              {% if block.toggleAppButtons == '1' %}
+                <div class="app-store-buttons-container">
+                  <a href="{{ appLinks.appStoreLink }}" target="_blank" rel="noreferrer noopener">
+                    <img width="180" src="/assets/img/badge-apple.svg" alt="">
+                  </a>
+                  <a href="{{ appLinks.playStoreLink }}" target="_blank" rel="noreferrer noopener">
+                    <img width="190" src="/assets/img/badge-android.svg" alt="">
+                  </a>
+                </div>
+              {% elseif block.bannerLink | length %}
+                {% if  block.bannerLink.getUrl()|length %}
+                  <a href="{{ block.bannerLink.getUrl() }}" class="button white text-{{ block.backgroundColour }} large particles">
+                    {{ block.bannerLink.getText() }}
+                  </a>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+          {% if block.bannerImage | length %}
+            <div class="columns large-6 banner-image right show-for-large"
+              style="background-image: url('{{ block.bannerImage[0].url }}')">
+            </div>
+          {% endif %}
+        </div>
+        {% if block.bannerImage | length %}
+          <div class="banner-image-small hide-for-large">
+            <img src="{{ block.bannerImage[0].url }}" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

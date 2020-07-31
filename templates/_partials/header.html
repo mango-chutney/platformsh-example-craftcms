@@ -1,0 +1,126 @@
+{% import _self as header %}
+
+{% set activeNavigationItem = false %}
+{% set activeNavigationParent = false %}
+
+{% for navigationItem in craft.entries.section('navigation').all() %}
+  {% if
+    navigationItem.navigationLink.hasElement()
+    and entry is defined
+    and navigationItem.navigationLink.getElement().slug == entry.slug
+  %}
+    {% set activeNavigationItem = navigationItem %}
+  {% endif %}
+{% endfor %}
+
+{% if activeNavigationItem|length %}
+  {% set activeNavigationParent = activeNavigationItem %}
+  {% if activeNavigationItem.getParent() %}
+    {% set activeNavigationParent = activeNavigationItem.getParent() %}
+  {% endif %}
+{% endif %}
+
+{% macro recursiveChildren(navigationItem, activeNavigationParent) %}
+  {% if navigationItem.navigationLink | length %}
+    {% set active = false %}
+
+    {% if
+      activeNavigationParent|length
+      and (
+        (navigationItem.navigationLink.hasElement()
+          and navigationItem.navigationLink.getElement().slug == activeNavigationParent.navigationLink.getElement().slug
+        )
+        or (
+          navigationItem.getParent()
+          and navigationItem.getParent().hasElement()
+          and navigationItem.getParent().getElement().slug == activeNavigationParent.navigationLink.getElement().slug
+        )
+      )
+    %}
+      {% set active = true %}
+    {% endif %}
+    <div class="navigation-link-wrapper">  
+      <a {{
+        navigationItem.navigationLink.getLinkAttributes({
+          class: [
+            'navigation-link',
+          ]
+        })
+      }}>
+        {{ navigationItem.navigationLink.getText() }}
+      </a>
+      <div class="subnavigation-wrapper">
+        <div class="subnavigation">
+          <div class="subnavigation-links-container">
+            {% if navigationItem.getDescendants().count() != 0 %}
+            {% for subnavigationItem in navigationItem.children.all() %}
+            <a {{
+                subnavigationItem.navigationLink.getLinkAttributes({
+                class: [
+                  'subnavigation-link',
+                  ]
+                })
+                }}>
+              {{ subnavigationItem.navigationLink.getText() }}
+            </a>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+<div class="preheader">
+  <a class="lf-logo" href="/">
+    <img src="/assets/img/lf-logo-horizontal-blue.svg" alt="Leukaemia Foundation"/>
+  </a>
+</div>
+<header id="header" class="header-wrapper">
+  <div class="row">
+    <div class="columns">
+      <div class="header-container">
+        <div class="row logo-row">
+          <div class="column">
+            <a href="/" class="logo-container">
+              <img src="/assets/img/logo.svg" alt="{{ siteName }} logo"/>
+            </a>
+          </div>
+        </div>
+        <div class="desktop-navigation">
+          <div class="navigation-container">
+            {% for navigationItem in craft.entries.section('navigation').level('<= 1').all() %}
+              {{ header.recursiveChildren(navigationItem, activeNavigationParent) }}
+            {% endfor %}
+          </div>
+          <div class="navigation-buttons-container">
+            <a href="#signup" class="button navigation-button secondary particles">
+              <i class="tristicon tristicon-star"></i>Sign up
+            </a>
+            <a href="{{ craft.app.config.general.constants.artezEventURL }}/registrant/startup.aspx?eventid={{ craft.app.config.general.constants.artezEventId }}&getpage=tabbedIndividualSearch" class="button primary navigation-button particles" target="_blank" rel="noopener noreferrer">
+              <i class="tristicon tristicon-heart"></i>Donate
+            </a>
+            <a href="{{ craft.app.config.general.constants.artezEventURL }}/registrant/startup.aspx?eventid={{ craft.app.config.general.constants.artezEventId }}" class="button tertiary navigation-button particles" target="_blank" rel="noopener noreferrer">
+              <i class="tristicon tristicon-lock"></i>Log in
+            </a>
+          </div>
+        </div>
+        <div class="mobile-navigation">
+          <div class="burger-container">
+            <a class="js-toggle-navigation">
+              <span class="burger"></span>
+            </a>
+          </div>
+          <div class="mobile-navigation-signup">
+            <a href="{{ craft.app.config.general.constants.artezEventURL }}/registrant/startup.aspx?eventid={{ craft.app.config.general.constants.artezEventId }}&getpage=tabbedIndividualSearch">
+              Donate
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% include '_partials/navigation-modal' %}

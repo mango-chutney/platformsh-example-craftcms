@@ -1,0 +1,75 @@
+{% set entry = craft.entries.section('usefulResources').one() %}
+{% set downloadFiles = craft.entries.section('downloads').level(1) %}
+
+<div class="content-block downloads-wrapper">
+  <div class="row">
+    <div class="columns">
+      <div class="downloads">
+        <div class="download-tabs-wrapper">
+          <div class="download-tabs-container">
+            {% for category in downloadFiles.all() %}
+              <div class="downloads-tab {% if loop.index == 1 %}active{% endif %}"
+                data-downloads-id="downloads-{{ loop.index }}">
+                {{ category.title }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <select id="downloads-select" class="downloads-select">
+          {% for category in downloadFiles.all() %}
+            <option class="downloads-tab" value="downloads-{{ loop.index }}">
+              {{ category.title }}
+            </div>
+          {% endfor %}
+        </select>
+        <div class="downloads-container">
+          {% for category in downloadFiles.all() %}
+          <div class="downloads-files {% if loop.index == 1 %}active{% endif %}" id="downloads-{{ loop.index }}">
+            {% for download in category.children.all() %}
+            {% set downloadLink = '' %}
+            {% set downloadExtension = '' %}
+            {% set downloadSize = '' %}
+            {% set downloadThumbnail = '' %}
+
+            {% if download.downloadLink|length > 0 %}
+            {% set downloadLink = download.downloadLink %}
+            {% elseif download.downloadFile %}
+            {% set downloadLink = download.downloadFile[0].url %}
+            {% endif %}
+
+            {% if download.downloadFile|length > 0 %}
+            {% set downloadSize = (download.downloadFile[0].size / 1024)|round(0) %}
+            {% endif %}
+
+            {% if download.downloadFile|length > 0 %}
+            {% set downloadExtension = download.downloadFile[0].extension %}
+            {% endif %}
+
+            {% if download.downloadThumbnail|length > 0 %}
+            {% set downloadThumbnail = download.downloadThumbnail[0].url %}
+            {% endif %}
+
+            <a href="{{ downloadLink }}" class="downloads-file" target="_blank" rel="noopener noreferrer">
+              <span class="downloads-icon">
+                <span class="downloads-file-background" style="background-image: url({{ downloadThumbnail }})"/></span>
+                <i class="tristicon tristicon-file-outline"></i>
+              </span>
+              <span class="downloads-title">
+                {{ download.title }}
+              </span>
+              <span class="downloads-description">
+                {% if downloadExtension|length > 0 %}<span class="downloads-extension">{{ downloadExtension }},</span>
+                {% endif %} {% if downloadSize|length > 0 %}{{ downloadSize }}kb{% endif %}
+              </span>
+              <span class="downloads-action">
+                DOWNLOAD
+              </span>
+            </a>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

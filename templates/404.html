@@ -1,0 +1,30 @@
+{% extends '_layouts/default' %}
+
+{% set slug = '404' %}
+{% do seomatic.meta.seoTitle("Page Not Found") %}
+
+{% block content %}
+  {% cache globally using key '404-content' %}
+  {% minify %}
+    <style>
+      @keyframes translateUp {
+        0%   { transform: translateY(100%); }
+        100% { transform: translateY(0%); }
+      }
+    </style>
+    <div class="padding-large margin-bottom-xlarge background-gray">
+      <div class="row padding-top-medium">
+        <div class="column text-center">
+          <div class="padding-medium">
+            <h1>Oops!</h1>
+            <h3 class="subheading">We could not find the page you were looking for</h3>
+            <div>
+              <a href="/" class="button large wide">Go Back Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}

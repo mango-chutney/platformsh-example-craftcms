@@ -1,0 +1,47 @@
+{% set faqs = craft.entries.section('faqs').level(1) %}
+
+<div class="margin-large">
+  <div class="box-large">
+    <div class="row">
+      <div class="columns">
+        <h2>
+          How can we help you?
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns">
+        <form class="search-faq-form" method="GET" action="" data-abide="ajax">
+          <input type="text" id="faq-search" class="large js-keywords" placeholder="Search" />
+          <span class="input-search-icon"><i class="tristicon tristicon-search"></i></span>
+        </form>
+        <p class="text-right faq-help">
+          Still need help? Call us on 1800 500 088
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns">
+        {% for category in faqs.all() %}
+        <div class="faq-category-container">
+          <h3 class="faq-category">
+            {{ category.title }}
+          </h3>
+          {% for faq in category.children.all() %}
+          <dl class="accordion faq-item-container js-faq-listing" data-accordion>
+            <dd class="accordion-navigation faq-item" data-state="showing">
+              <a data-external-trigger class="faq-question">
+                {{ faq.faqTitle }}
+              </a>
+              <div id="{url}" class="faq-content">
+                {{ faq.faqText }}
+              </div>
+            </dd>
+          </dl>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+{% extends '_layouts/default' %}
+
+{% do seomatic.meta.seoTitle("Sign Up") %}
+{% set slug = 'signup' %}
+
+{% block head %}
+{% endblock %}
+
+{% block head_additional %}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block registrationModal %}
+{% endblock %}
+
+{% block content %}
+  {% cache globally using key 'signup' for 1 day%}
+  {% minify %}
+     <div id="app"></div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}
+
+{% block foot %}
+{% endblock %}
+
+{% block foot_additional %}
+  <script src="/assets/vendor.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+  <script src="/assets/register.js?v={{ craft.app.config.general.constants.buildNo }}"></script>
+  <script type="text/javascript">(function(o){var b="https://api.autopilothq.com/anywhere/",t="bdb933e9ae2749c7b0b24bbc8e9438a54c4c49dc54ad44d3a93a94f287981897",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
+{% endblock %}

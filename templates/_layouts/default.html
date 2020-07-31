@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    {% include '_system/meta' %}
+    {% include '_system/favicon' %}
+    {% include '_system/head-scripts'%}
+
+    {% block head %}
+    {% endblock %}
+
+    {% block head_additional %}
+    {% endblock %}
+  </head>
+  <body class="{% if slug is defined %}page-{{ slug }}{% endif %}">
+
+    {% include '_system/body-scripts' %}
+
+    {% block header %}
+      {% cache globally using key (slug ~ '-header') %}
+      {% minify %}
+        {% include '_partials/header' %}
+      {% endminify %}
+      {% endcache %}
+    {% endblock %}
+
+    <main id="content" role="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% block footer %}
+      {% cache globally using key (slug ~ '-footer') %}
+      {% minify %}
+        {% include '_partials/footer' %}
+      {% endminify %}
+
+      {% endcache %}
+    {% endblock %}
+
+    {% block registrationModal %}
+      {% include '_partials/registration-modal' %}
+    {% endblock %}
+
+    {% block foot %}{% endblock %}
+
+    {% include '_system/footer-scripts' %}
+
+    {% block foot_additional %}{% endblock %}
+  </body>
+</html>

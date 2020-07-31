@@ -1,0 +1,42 @@
+{% do seomatic.tag.get("robots").content("none") %}
+{% do seomatic.meta.seoTitle("National Volunteer Week") %}
+
+{% extends '_layouts/default' %}
+
+{% set slug = 'volunteer-week' %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+  {% minify %}
+  <header id="header" class="offline-header-wrapper">
+    <div class="row">
+      <div class="columns">
+        <div class="offline-header-container">
+          <a href="/" class="offline-logo-container" style="height: 5rem">
+            <img style="padding-top: 1rem" src="/assets/img/logo-lf-white.png" alt="Leukaemia logo" />
+          </a>
+        </div>
+      </div>
+  </header>
+    <div class="padding-large">
+      <div class="row">
+        <div class="columns">
+          <div class="box-medium">
+            <h4 class="title">
+              Thank you certificate
+            </h4>
+            <form method="get" action="/api/pdf-volunteer-week.php">
+              <dl>
+                <dt><label for="name">First and last name  (e.g. John Smith)</label></dt>
+                <dd><input name="name" id="name" class="input" tabindex="3" type="text" maxlength="70"></dd>
+                <dd><button class="button large wide" tabindex="5" type="submit" height="40" width="93">Submit</button></dd>
+              </dl>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endminify %}
+{% endblock %}

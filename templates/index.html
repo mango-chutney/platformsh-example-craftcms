@@ -1,0 +1,60 @@
+{% extends "_layouts/default" %}
+
+{% set slug = 'home' %}
+
+{% do seomatic.meta.seoTitle("World's Greatest Shave | Leukaemia Foundation") %}
+
+{% block head_additional %}
+{% endblock %}
+
+{% block content %}
+  {% cache globally using key 'index-content' %}
+  {% minify %}
+    {% for hero in entry.homeHero.limit(1).all() %}
+      <div
+        class="home-hero-wrapper"
+        style="background-image: url('{% if hero.heroImage | length %}{{ hero.heroImage[0].url }}{% else %}/assets/img/hero-01.jpg{% endif %}');"
+      >
+        <div class="home-hero-container">
+          <div class="row text-white">
+            <div class="columns large-6 float-right">
+              <div class="home-hero-content">
+                <h1 class="home-hero-heading">
+                  {{ hero.heroTitle|nl2br }}
+                </h1>
+                <h4 class="home-hero-subheading">
+                  {{ hero.heroSubtitle|nl2br }}
+                </h4>
+                <div class="home-hero-buttons-container">
+                  <a href="#signup" class="button white large text-primary hero-button particles">
+                    {{ hero.signupButtonText }}
+                  </a>
+                  <a href="{{ craft.app.config.general.constants.artezEventURL }}/registrant/startup.aspx?eventid={{ craft.app.config.general.constants.artezEventId }}&getpage=tabbedIndividualSearch" class="button white hollow large hero-button particles">
+                    Donate
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-hero-mobile-image-wrapper">
+          {% if hero.heroImageMobile | length %}
+            <div class="home-hero-mobile-image" style="background-image: url({{ hero.heroImageMobile[0].url }});"></div>
+          {% else %}
+            <div>
+              <div class="home-hero-mobile-image animated" style="background-image: url(/assets/img/shaverhands/powerpose-mobile-01.png);"></div>
+              <div class="home-hero-mobile-image animated" style="background-image: url(/assets/img/shaverhands/powerpose-mobile-02.png);"></div>
+              <div class="home-hero-mobile-image animated" style="background-image: url(/assets/img/shaverhands/powerpose-mobile-03.png);"></div>
+              <div class="home-hero-mobile-image animated" style="background-image: url(/assets/img/shaverhands/powerpose-mobile-04.png);"></div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+    <div class="content-blocks-container">
+      {% include '_partials/content-blocks' %}
+    </div>
+    <div id="ticker"></div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}

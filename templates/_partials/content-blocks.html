@@ -1,0 +1,41 @@
+{% if entry.contentBlocks1 | length %}
+  {% for block in entry.contentBlocks1.all() %}
+    {% set divAttributes = {
+        id: block.appId,
+        class: (block.appId == 'top-leaderboards'
+            or block.appId == 'work-leaderboards'
+            or block.appId == 'school-leaderboards'
+            or block.appId == 'school-registration-selection')
+          ? 'background-gray content-block' : '',
+      }
+    %}
+
+    {% switch block.type %}
+      {% case "pageSection" %}
+        {% include '_partials/block-section' %}
+      {% case "banner" %}
+        {% include '_partials/block-banner' %}
+      {% case "appBlock" %}
+        {% switch block.appId %}
+          {% case "campaign" %}
+            {% include '_partials/block-campaign' %}
+          {% case "juicer" %}
+            {% include '_partials/block-juicer' %}
+          {% case "downloads" %}
+            {% include '_partials/block-downloads' %}
+          {% case 'faqs' %}
+            {% include '_partials/block-faqs' %}
+          {% case 'contact-us' %}
+            {% include '_partials/block-contact-us' %}
+          {% case 'state-fundraising-totals' %}
+            {% include '_partials/block-state-totals' %}
+          {% default %}
+            <div {{attr(divAttributes)}}></div>
+        {% endswitch %}
+      {% case "icons" %}
+        {% include '_partials/block-icons' %}
+      {% case "blank" %}
+        <div class="content-block">{{ block.block }}</div>
+    {% endswitch %}
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,40 @@
+{% set rowAttributes = {
+    class: [
+      'row',
+      'content-row'
+    ]
+  }
+%}
+
+{% set sectionAttributes = {
+    class: [
+      'content-block',
+      block.background
+    ]
+  }
+%}
+
+<div {{attr(sectionAttributes)}}>
+  {% for heading in block.headingMatrix.all() %}
+    {% if heading.heading|length or heading.subheading|length %}
+      <div class="row text-center">
+        <div class="columns">
+          <div class="heading-wrapper" {% if heading.anchorName|length %} id="{{ heading.anchorName }}" {% endif %}>
+            {% if heading.heading|length %}
+              <h1>{{ heading.heading|nl2br }}</h1>
+            {% endif %}
+            {% if heading.subheading|length %}
+              <h3 class="subheading">{{ heading.subheading|nl2br }}</h3>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+  <div {{attr(rowAttributes)}}>
+    {% for row in block.row.all() %} {% set columnAttributes = { class: [
+    'column', row.columnWidth ] } %}
+    <div {{attr(columnAttributes)}}>{{ row.column }}</div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{% do seomatic.tag.get("robots").content("none") %}
+{% do seomatic.meta.seoTitle("Thank your helpers") %}
+
+{% extends '_layouts/default' %}
+
+{% set title = 'Create a poster - Thank your helpers' %}
+{% set slug = 'pdf-download' %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+{% cache globally using key (craft.app.request.pathInfo ~ '-content') %}
+{% minify %}
+{% include '_partials/secondary-page-header' %}
+<div class="padding-large">
+  <div class="row">
+    <div class="columns">
+      <div class="box-medium">
+        <h4 class="title">
+          Thank you certificate
+        </h4>
+        <form method="get" action="/api/pdf-thankyou-helpers.php">
+          <dl>
+            <dt><label for="line1">First and Last name (e.g. John Smith)</label></dt>
+            <dd><input name="line1" id="name" class="input" tabindex="3" type="text" maxlength="70"></dd>
+            <dt><label for="line2">School, company, or organisation (e.g. Brown State School)</label></dt>
+            <dd><input name="line2" id="line2" class="input" tabindex="3" type="text" maxlength="70"></dd>
+            <dd><button class="button large wide" tabindex="5" type="submit" height="40" width="93">Submit</button></dd>
+          </dl>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endminify %}
+{% endcache %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% do seomatic.tag.get("robots").content("none") %}
+{% do seomatic.meta.seoTitle("Create an A4 poster") %}
+
+{% extends '_layouts/default' %}
+
+{% set slug = 'pdf-download' %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+  {% cache globally using key (craft.app.request.pathInfo ~ '-content') %}
+  {% minify %}
+    {% include '_partials/secondary-page-header' %}
+    <div class="padding-large">
+      <div class="row">
+        <div class="columns">
+          <div class="box-medium">
+            <h4 class="title">
+              Create an A4 Poster
+            </h4>
+            <form method="get" action="/api/pdf-a4-poster.php">
+              <dl>
+                <dt><label for="name">Your Name</label></dt>
+                <dd><input name="name" id="name" class="input" tabindex="1" type="text" maxlength="25"></dd>
+                <dt><label>I am going to</label></dt>
+                <dd style="line-height:40px;">
+                  &nbsp;<input name="shave-type" type="radio" value="shaving" checked id="sc1"/><label for="sc1">&nbsp; Shave!</label> &nbsp;&nbsp;&nbsp;
+                  <input name="shave-type" type="radio" value="colouring" id="sc2"/><label for="sc2">&nbsp; Colour</label>
+                  <input name="shave-type" type="radio" value="waxing" id="sc3"/><label for="sc3">&nbsp; Wax</label>
+                  <input name="shave-type" type="radio" value="cutting" id="sc4"/><label for="sc3">&nbsp; Cut</label>
+                </dd>
+                <dt><label for="goal">Fundraising Goal</label></dt>
+                <dd><input name="goal" id="goal" class="input" tabindex="2" type="text" maxlength="60" value="$"></dd>
+                <dt><label for="place">The Venue</label></dt>
+                <dd><input name="place" id="place" class="input" tabindex="3" type="text" maxlength="60"></dd>
+                <dt><label for="date">Date &amp; Time</label></dt>
+                <dd><input name="date" id="date" class="input" tabindex="4" type="text" maxlength="60"></dd>
+                <dt><label for="cont">Contact Details</label></dt>
+                <dd><input name="cont" id="cont" class="input" tabindex="5" type="text" maxlength="60"></dd>
+                <dt><label for="msg">Short Message</label></dt>
+                <dd><textarea name="msg" id="msg" class="input" tabindex="6" rows="3" maxlength="250"></textarea></dd>
+                <dd><button class="button large wide" tabindex="5" type="submit" height="40" width="93">Submit</button></dd>
+              </dl>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endminify %}
+  {% endcache %}
+{% endblock %}

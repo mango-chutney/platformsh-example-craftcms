@@ -1,0 +1,25 @@
+{% if entry.heroTitle | length %}
+  <div class="hero-wrapper background-primary text-white">
+    <div class="hero-container">
+      <div class="row">
+        <div class="columns large-6">
+          <div class="hero-content-wrapper">
+            <div class="hero-content-container">
+              <h1 class="hero-heading">
+                {{ entry.heroTitle|nl2br }}
+              </h1>
+              <h4 class="hero-subheading">
+                {{ entry.heroSubtitle|nl2br }}
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="columns large-6 hero-image-container" style="background-image: url('{% if entry.heroImage|length %}{{ entry.heroImage[0].url }}{% endif %}')">
+          {% if entry.heroImage | length %}
+            <img src="{{ entry.heroImage[0].url }}" alt="{{  entry.title }} hero" class="hide-for-large"/>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
