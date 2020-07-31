@@ -5,7 +5,6 @@ module.exports = {
         require('autoprefixer')({ grid: 'autoplace' }),
         require('cssnano'),
         require('postcss-flexbugs-fixes'),
-        require('postcss-object-fit-images'),
       ]
       : []),
   ],

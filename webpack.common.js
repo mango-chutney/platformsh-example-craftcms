@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: [path.resolve('./src/main.ts')],
+    main: [path.resolve('./src/index.ts')],
   },
   output: {
     path: path.resolve(__dirname, './web/assets/'),
@@ -60,7 +60,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'styles.[hash].css',
-    }),,
+    }),
     new ManifestPlugin({
       basePath: 'assets/',
       writeToFileEmit: true,
