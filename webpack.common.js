@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: [path.resolve('./src/main.tsx')],
+    main: [path.resolve('./src/main.ts')],
   },
   output: {
     path: path.resolve(__dirname, './web/assets/'),
