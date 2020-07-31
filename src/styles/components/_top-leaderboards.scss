@@ -1,0 +1,95 @@
+$leaderboards-color: $primary-color;
+$leaderboards-subcolor: darken($global-border-color, 30);
+$leaderboards-border-color: rgba($global-border-color, 0.85);
+$leaderboards-border: 1px solid $leaderboards-border-color;
+
+.top-leaderboard-wrapper {
+  background-color: $light-gray;
+}
+
+.top-leaderboard-container {
+  background: $white;
+  border: $leaderboards-border;
+  border-radius: $global-radius;
+  margin: 0 auto;
+  max-width: rem-calc(650);
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(small down) {
+    margin: 0 -1.5rem;
+  }
+
+  &::before {
+    background: rgba($leaderboards-color, 0.75);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 6px;
+  }
+}
+
+.top-leaderboard-item {
+  a {
+    border-bottom: $leaderboards-border;
+    color: $leaderboards-color;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 1rem 2rem;
+    position: relative;
+
+    @include breakpoint(small down) {
+      padding: 1rem 1.5rem;
+    }
+
+    @include hocus() {
+      background: rgba($leaderboards-color, 0.025);
+
+      &::before {
+        background: $leaderboards-color;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 6px;
+      }
+    }
+  }
+
+  &:last-child {
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+.top-leaderboard-position {
+  color: rgba($leaderboards-color, 0.85);
+  flex: 0 0 rem-calc(45);
+  font-weight: $global-weight-semibold;
+}
+
+.top-leaderboard-name-container {
+  flex: 2;
+  padding-right: 1rem;
+}
+
+.top-leaderboard-name {
+  font-weight: $global-weight-semibold;
+  padding-right: 1rem;
+}
+
+.top-leaderboard-location {
+  color: $leaderboards-subcolor;
+  flex: 0.5;
+  padding-right: 1rem;
+}
+
+.top-leaderboard-raised {
+  flex: 1;
+  font-weight: $global-weight-semibold;
+  text-align: right;
+}

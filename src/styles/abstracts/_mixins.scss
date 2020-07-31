@@ -1,0 +1,12 @@
+/**
+ *  mixins.scss
+ */
+
+// target the :hover and :focus selector states
+@mixin hocus {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}

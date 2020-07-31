@@ -2,10 +2,15 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
   entry: {
-    main: [path.resolve('./src/index.ts')],
+    main: [
+      path.resolve('./src/main.js'),
+      path.resolve('./src/styles/main.scss'),
+    ],
   },
   output: {
     path: path.resolve(__dirname, './web/assets/'),
@@ -20,16 +25,42 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|js)x?$/,
-        exclude: /@babel(?:\/|\\{1,2})runtime|core-js/,
         loader: 'babel-loader',
+        include: [
+          path.resolve('./src'),
+          path.resolve(__dirname, './signup'),
+          path.resolve(__dirname, './node_modules/mango-components'),
+          path.resolve(__dirname, './node_modules/artez-client-apis'),
+          path.resolve(__dirname, './node_modules/luhnify'),
+          path.resolve(__dirname, './node_modules/udf-mapper'),
+          path.resolve(__dirname, './node_modules/bad-words'),
+          path.resolve(__dirname, './node_modules/dirty-json'),
+        ],
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              url: false,
+            },
+          },
           'postcss-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: [
+                  path.resolve('./node_modules/foundation-sites/scss'),
+                  path.resolve('./node_modules/tristicons/dist/scss'),
+                  path.resolve('./node_modules/react-smartbanner/src/styles'),
+                ],
+              },
+            },
+          },
         ],
       },
       {
@@ -43,21 +74,23 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[hash].[ext]',
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns:[
+        {
+          from: path.resolve('./node_modules/tristicons/dist/fonts/**/*'),
+          to: './web/assets/fonts/',
+          flatten: true,
+        },
+        {
+          from: path.resolve('./src/static'),
+          flatten: true,
+        }
+      ]
+    }),
     new MiniCssExtractPlugin({
       filename: 'styles.[hash].css',
     }),

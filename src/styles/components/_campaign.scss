@@ -1,0 +1,27 @@
+.campaign-wrapper {
+  &.loading {
+    display: none;
+  }
+}
+
+.amount-raised-title {
+  font-size: rem-calc(18);
+}
+
+#amount-raised {
+  h1 {
+    color: $primary-color;
+    font-size: rem-calc(45);
+    font-weight: $global-weight-bold;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(90);
+    }
+
+    @include breakpoint(large) {
+      font-size: rem-calc(120);
+    }
+  }
+}

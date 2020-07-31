@@ -1,0 +1,86 @@
+.media-contacts {
+  background: $white;
+  border-radius: $global-radius;
+  box-shadow: 0 1px 3px rgba($black, 0.06), 0 1px 2px rgba($black, 0.12);
+  margin: 0 auto;
+  max-width: rem-calc(650);
+}
+
+.media-details {
+  border-bottom: $global-border;
+  flex: 1;
+  margin-left: 2rem;
+  padding: 1rem 0;
+}
+
+.media-contact {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0 1.5rem;
+
+  p {
+    margin: 0;
+  }
+
+  &:last-child {
+    .media-details {
+      border-bottom: 0;
+    }
+  }
+}
+
+.media-circle {
+  padding: 1rem 0;
+
+  div {
+    background-color: rgba($primary-color, 0.85);
+    border-radius: 50%;
+    color: white;
+    font-size: rem-calc(12);
+    font-weight: $global-weight-semibold;
+    height: rem-calc(45);
+    line-height: rem-calc(45);
+    text-align: center;
+    width: rem-calc(45);
+  }
+}
+
+.media-name {
+  display: inline-block;
+  margin-right: 1rem;
+
+  @include breakpoint(small down) {
+    display: block;
+  }
+
+  a {
+    font-weight: $global-weight-semibold;
+  }
+}
+
+.media-state {
+  font-weight: $global-weight-semibold;
+  margin-bottom: 0.25rem;
+
+  &,
+  p {
+    color: $black;
+  }
+}
+
+.media-phone {
+  display: inline-block;
+  margin-right: 0.5rem;
+
+  @include breakpoint(small down) {
+    display: block;
+  }
+
+  &::before {
+    content: "\f10b";
+    font-family: FontAwesome;
+    font-size: rem-calc(14);
+    margin-right: $global-margin / 2;
+    opacity: 0.75;
+  }
+}

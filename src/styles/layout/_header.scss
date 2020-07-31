@@ -1,0 +1,338 @@
+$logo-width: rem-calc(150);
+$logo-width-medium: rem-calc(150);
+$logo-width-small: rem-calc(135);
+// when the navigation gets a little how it going
+$navigation-breakpoint: 1100px down;
+$navigation-breakpoint-small: medium down;
+$navigation-size: rem-calc(16);
+$navigation-size-medium: rem-calc(14);
+$subnavigation-background: darken($primary-color, 10%);
+$subnavigation-color: $white;
+
+.preheader {
+  background-color: $white;
+  padding: 1.25rem 1.5rem;
+
+  @include breakpoint(medium down) {
+    padding: 1rem 1.5rem;
+  }
+
+  @include breakpoint(small down) {
+    padding: 0.85rem 1.5rem;
+  }
+
+  .lf-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: rem-calc(200);
+
+    @include breakpoint(medium dowm) {
+      width: rem-calc(200);
+    }
+
+    @include breakpoint(small down) {
+      width: rem-calc(170);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.header-wrapper {
+  background-color: $header-background;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  a {
+    color: $white;
+  }
+
+  &.active {
+    position: inherit;
+  }
+
+  @include breakpoint($navigation-breakpoint) {
+    position: inherit;
+  }
+}
+
+.header-container {
+  height: rem-calc(75);
+
+  @include breakpoint($navigation-breakpoint) {
+    height: auto;
+  }
+}
+
+.header-container,
+.subnavigation-container {
+  @include breakpoint(medium down) {
+    padding-left: $logo-width-medium + 1rem;
+  }
+
+  @include breakpoint($navigation-breakpoint) {
+    padding-left: 0;
+  }
+}
+
+.subnavigation {
+  margin: 0 auto;
+  max-width: $global-width;
+  padding-left: $logo-width + 3rem;
+}
+
+.desktop-navigation {
+  display: flex;
+  flex-direction: row;
+  padding-left: $logo-width + 1rem;
+
+  @include breakpoint($navigation-breakpoint) {
+    display: none;
+  }
+}
+
+.mobile-navigation {
+  display: none;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+  @include breakpoint($navigation-breakpoint) {
+    display: flex;
+  }
+
+  &.active {
+    display: flex;
+
+    .burger-container {
+      left: 1rem;
+      position: fixed;
+      top: 1rem;
+      z-index: 10002;
+    }
+  }
+}
+
+.mobile-navigation-signup {
+  font-weight: $global-weight-semibold;
+  margin-left: auto;
+}
+
+.logo-container {
+  background-color: $logo-color;
+  left: 0;
+  padding: 2rem 1rem;
+  position: absolute;
+  width: $logo-width;
+  z-index: 2;
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint(medium down) {
+    width: $logo-width-medium;
+  }
+
+  @include breakpoint($navigation-breakpoint) {
+    left: rem-calc(50);
+    padding: 1.5rem 1rem;
+  }
+
+  @include breakpoint($navigation-breakpoint-small) {
+    left: 50%;
+    transform: translateX(-50%);
+    width: $logo-width-small;
+  }
+}
+
+.navigation-link-wrapper {
+  overflow: hidden;
+
+  @include hocus() {
+    .subnavigation-wrapper {
+      max-height: 3rem;
+    }
+  }
+}
+
+.navigation-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.25rem;
+}
+
+.navigation-link {
+  align-items: center;
+  display: flex;
+  font-size: $navigation-size;
+  font-weight: $global-weight-semibold;
+  height: rem-calc(75);
+  justify-content: center;
+  line-height: 1.2;
+  padding: 0.5rem;
+  position: relative;
+  text-align: center;
+
+  @include breakpoint(large down) {
+    padding: 0.5rem;
+  }
+
+  @include breakpoint(medium down) {
+    font-size: $navigation-size-medium;
+  }
+
+  &::after {
+    border-color: transparent transparent $subnavigation-background transparent;
+    border-style: solid;
+    border-width: 10px;
+    bottom: -10px;
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -10px;
+    opacity: 100%;
+    position: absolute;
+    top: auto;
+    transition: 0.375s ease all;
+  }
+
+  @include hocus() {
+    &::after {
+      bottom: 1px;
+    }
+  }
+}
+
+.navigation-buttons-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: $navigation-size;
+  justify-content: center;
+  margin-left: auto;
+  padding: 1rem;
+
+  a {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+
+    @include breakpoint(medium down) {
+      font-size: $navigation-size-medium;
+      padding: 0.85em 1.1em;
+
+      i {
+        display: none;
+      }
+    }
+  }
+}
+
+.navigation-button {
+  .tristicon {
+    margin-right: $global-margin / 2;
+  }
+
+  @include breakpoint(large down) {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
+.subnavigation-wrapper {
+  background-color: $subnavigation-background;
+  left: 0;
+  margin-top: rem-calc(-1);
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: rem-calc(76);
+  transition: 0.375s ease max-height;
+  transition-delay: 0.175s;
+  width: 100%;
+  z-index: -1;
+
+  a {
+    color: $subnavigation-color;
+  }
+
+  @include breakpoint($navigation-breakpoint) {
+    display: none;
+    position: inherit;
+  }
+}
+
+.subnavigation-links-container {
+  padding: 0.5rem 0 0.5rem 0.25rem;
+}
+
+.subnavigation-link {
+  border-radius: $global-radius;
+  display: inline-block;
+  font-size: $navigation-size;
+  font-weight: $global-weight-semibold;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+
+  &.active {
+    background: darken($subnavigation-background, 10%);
+    padding: 0.25rem 1rem;
+
+    &:first-child {
+      margin-left: -0.5rem;
+    }
+  }
+
+  @include breakpoint(medium down) {
+    font-size: $navigation-size-medium;
+  }
+}
+
+.offline-logo-container {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: $logo-width;
+  z-index: 2;
+  background-color: $logo-color;
+  padding: 2rem 1rem;
+
+  @include breakpoint($navigation-breakpoint) {
+    padding: 1.5rem 1rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.offline-header-wrapper {
+  background-color: $header-background;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.offline-header-container {
+  height: rem-calc(75);
+  padding-left: $logo-width + 1rem;
+  position: relative;
+
+  @include breakpoint(medium down) {
+    padding-left: $logo-width-medium + 1rem;
+  }
+
+  @include breakpoint($navigation-breakpoint) {
+    padding-left: 0;
+  }
+}
+
+.logo-row {
+  position: relative;
+}

@@ -1,0 +1,32 @@
+.registration-select-modal-close {
+  color: $body-font-color;
+  cursor: pointer;
+  font-size: rem-calc(20);
+  padding: 1rem;
+  position: fixed;
+  right: 1rem;
+  top: 0;
+  z-index: 10004;
+
+  @include breakpoint(medium down) {
+    right: 0;
+  }
+}
+
+.registration-modal-wrapper {
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 0;
+
+  &.active {
+    pointer-events: all;
+    visibility: visible;
+    z-index: 9999;
+  }
+}
+
+body {
+  &.modal-open {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,230 @@
+$home-hero-breakpoint: medium down;
+
+.home-hero-wrapper {
+  align-items: center;
+  background-color: $primary-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  float: none;
+  justify-content: flex-start;
+  min-height: rem-calc(660);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(xlarge down) {
+    min-height: 0;
+  }
+
+  @include breakpoint($home-hero-breakpoint) {
+    background-image: none !important;
+    flex-flow: column;
+    min-height: rem-calc(650);
+    text-align: center;
+  }
+
+  @include breakpoint(small down) {
+    height: calc(100vh - #{rem-calc(100)} - #{rem-calc(56)});
+    max-height: rem-calc(700);
+    min-height: rem-calc(510);
+  }
+
+  h1 {
+    font-size: rem-calc(32);
+    font-weight: $global-weight-bold;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(40);
+    }
+
+    @include breakpoint(large) {
+      font-size: rem-calc(52);
+    }
+  }
+
+  // ie11 align items fix
+  &::after {
+    content: "";
+    display: block;
+    font-size: 0;
+    min-height: inherit;
+
+    @include breakpoint($home-hero-breakpoint) {
+      display: none;
+    }
+  }
+}
+
+.home-hero-container {
+  padding: 10rem 0;
+  width: 100%;
+
+  @include breakpoint($home-hero-breakpoint) {
+    padding: 8rem 0 4rem;
+  }
+
+  @include breakpoint(small down) {
+    padding: 6.5rem 0 1rem;
+  }
+}
+
+.home-hero-content {
+  float: right;
+  padding-left: 1rem;
+
+  @include breakpoint(large) {
+    padding: 2rem 0 0 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    font-weight: $global-weight-bold;
+    margin-right: 1rem;
+    min-width: rem-calc(190);
+
+    @include breakpoint($home-hero-breakpoint) {
+      margin-right: 0;
+      min-width: 0;
+    }
+  }
+
+  @include breakpoint($home-hero-breakpoint) {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0.5rem;
+
+    .button {
+      display: block;
+      font-size: rem-calc(18);
+    }
+  }
+
+  @include breakpoint(medium down) {
+    max-width: rem-calc(530);
+  }
+
+  @include breakpoint(small down) {
+    max-width: rem-calc(385);
+  }
+}
+
+.home-hero-subheading {
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.home-hero-buttons-container {
+  margin-top: 0;
+
+  @include breakpoint($home-hero-breakpoint) {
+    display: none;
+    margin-top: 2rem;
+  }
+}
+
+@keyframes home-hero-animation-02 {
+  0% {
+    opacity: 0;
+  }
+
+  3% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 0;
+  }
+}
+
+@keyframes home-hero-animation-03 {
+  2% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  14% {
+    opacity: 1;
+  }
+
+  17% {
+    opacity: 0;
+  }
+}
+
+@keyframes home-hero-animation-04 {
+  4% {
+    opacity: 0;
+  }
+
+  7% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  16% {
+    opacity: 0;
+  }
+}
+
+.home-hero-mobile-image-wrapper {
+  display: none;
+  height: rem-calc(300);
+  margin: auto auto 0;
+  max-width: calc(100% - 3rem);
+  position: relative;
+  width: 100%;
+
+  @include breakpoint($home-hero-breakpoint) {
+    display: block;
+  }
+
+  @include breakpoint(medium) {
+    max-width: rem-calc(390);
+  }
+}
+
+.home-hero-mobile-image {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &.animated {
+    animation-delay: 1000ms;
+    opacity: 0;
+
+    &:nth-child(1) {
+      animation: none;
+      opacity: 1;
+    }
+
+    &:nth-child(2) {
+      animation: home-hero-animation-02 10000ms infinite;
+    }
+
+    &:nth-child(3) {
+      animation: home-hero-animation-03 10000ms infinite;
+    }
+
+    &:nth-child(4) {
+      animation: home-hero-animation-04 10000ms infinite;
+    }
+  }
+}

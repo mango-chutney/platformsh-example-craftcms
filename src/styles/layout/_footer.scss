@@ -1,0 +1,322 @@
+/**
+ *  footer.scss
+ */
+
+$footer-registration-breakpoint: medium down;
+$footer-breakpoint: medium down;
+$footer-background-color: $light-gray;
+$footer-header-color: $brand-color;
+$footer-header-size: rem-calc(16);
+$footer-link-color: $black;
+$footer-font-size: rem-calc(14);
+
+.footer-wrapper {
+  background-color: $footer-background-color;
+  color: $footer-link-color;
+  font-size: $footer-font-size;
+  margin: 3rem 0 1rem;
+  padding-top: 4rem;
+
+  @include breakpoint($footer-breakpoint) {
+    margin: 0 0 1rem;
+    padding-top: 3rem;
+  }
+
+  @include breakpoint(small down) {
+    padding-bottom: rem-calc(100);
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+
+  @include breakpoint($footer-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.footer-navigation-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: row wrap;
+  padding: 0 0 2.5rem;
+
+  @include breakpoint($footer-breakpoint) {
+    flex-flow: column;
+    padding: 0 0 4.5rem;
+  }
+}
+
+.footer-navigation {
+  column-count: 3;
+
+  @include breakpoint($footer-breakpoint) {
+    column-count: 3;
+  }
+
+  @include breakpoint(small down) {
+    column-count: 2;
+  }
+}
+
+.footer-subnavigation-link {
+  color: $footer-link-color;
+  font-size: $footer-font-size;
+  font-weight: $global-weight-normal;
+
+  @include hocus() {
+    color: lighten($footer-link-color, 10%);
+  }
+}
+
+.footer-navigation-list {
+  break-inside: avoid-column;
+  color: $footer-link-color;
+  font-size: $footer-font-size;
+  list-style: none;
+  margin: 0 3rem 0 0;
+  padding-bottom: 2rem;
+  page-break-inside: avoid;
+
+  @include breakpoint($footer-breakpoint) {
+    margin: 0 2rem 0 0;
+  }
+
+  &:last-child {
+    padding-bottom: 8rem;
+
+    @include breakpoint($footer-breakpoint) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.footer-header {
+  color: $footer-header-color;
+  font-size: $footer-header-size;
+  font-weight: $global-weight-semibold;
+
+  @include hocus() {
+    color: $footer-header-color;
+  }
+}
+
+.footer-social-wrapper {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  margin-left: auto;
+
+  @include breakpoint($footer-breakpoint) {
+    flex-flow: row;
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+
+  a {
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid $footer-header-color;
+    border-radius: 50%;
+    color: $footer-header-color;
+    display: flex;
+    font-size: rem-calc(25);
+    height: rem-calc(35);
+    justify-content: center;
+    line-height: rem-calc(35);
+    margin-bottom: 1rem;
+    text-align: center;
+    width: rem-calc(35);
+
+    @include breakpoint($footer-breakpoint) {
+      margin-right: 1rem;
+    }
+
+    @include hocus() {
+      border-color: lighten($footer-header-color, 10%);
+      color: lighten($footer-header-color, 10%);
+    }
+  }
+}
+
+.footer-lf-container {
+  padding: 0 5rem 2rem 0;
+
+  img {
+    max-width: 100%;
+    width: rem-calc(175);
+  }
+}
+
+.mangochutney-container {
+  padding-bottom: 4rem;
+  text-align: right;
+}
+
+.mangochutney {
+  background-image: url("/assets/img/mangochutney.svg?v=1");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: block;
+  float: right;
+  font-size: 0;
+  height: rem-calc(20);
+  margin-left: auto;
+  overflow: hidden;
+  text-indent: -99999px;
+  transition: 0.1s 0.1s;
+  width: rem-calc(190);
+
+  &:hover,
+  &:focus {
+    background-position: 0 rem-calc(-22);
+  }
+}
+
+.footer-animation-wrapper {
+  margin: 0 auto -3rem;
+  max-width: rem-calc(500);
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(large down) {
+    max-width: rem-calc(380);
+  }
+
+  @include breakpoint(medium down) {
+    margin: 0 auto 0;
+  }
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.footer-animation-container {
+  padding-bottom: 95%;
+  position: relative;
+
+  div {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 300ms ease;
+    width: 100%;
+
+    &:nth-child(1) {
+      background-image: url("/assets/img/shaverhands/powerpose-01.png");
+      opacity: 1;
+    }
+
+    &:nth-child(2) {
+      background-image: url("/assets/img/shaverhands/powerpose-02.png");
+    }
+
+    &:nth-child(3) {
+      background-image: url("/assets/img/shaverhands/powerpose-03.png");
+      transition-delay: 150ms;
+    }
+
+    &:nth-child(4) {
+      background-image: url("/assets/img/shaverhands/powerpose-04.png");
+      transition-delay: 300ms;
+    }
+  }
+
+  @include hocus() {
+    div {
+      opacity: 1;
+    }
+  }
+}
+
+.footer-registration-container {
+  margin: 8rem auto 2rem;
+
+  .subheading {
+    @include breakpoint(large) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include breakpoint(medium down) {
+    margin: 7rem auto 2rem;
+  }
+
+  @include breakpoint($footer-registration-breakpoint) {
+    background-color: $white;
+    bottom: 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    left: 0;
+    margin: 0 5rem 0 0;
+    padding: 1.25rem 1.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+
+    &.modal-open {
+      z-index: 10003;
+    }
+  }
+}
+
+.footer-registration-row {
+  padding: 0 2rem;
+  text-align: center;
+
+  @include breakpoint($footer-registration-breakpoint) {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.footer-registration-button {
+  font-size: rem-calc(36);
+  margin: 0 auto;
+  max-width: rem-calc(270);
+  padding: 1.5rem 3rem;
+  width: 100%;
+
+  @include breakpoint(large down) {
+    font-size: rem-calc(32);
+  }
+
+  @include breakpoint($footer-registration-breakpoint) {
+    font-size: rem-calc(22);
+    margin: 0;
+    max-width: calc(100% - #{rem-calc(60)} - 1rem);
+    padding: 1.125rem 2rem;
+    transition: 275ms all ease-out;
+  }
+
+  .modal-open & {
+    @include breakpoint($footer-registration-breakpoint) {
+      max-width: 100%;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.offline-footer {
+  margin-top: 0;
+}
+
+.intercom-lightweight-app-launcher,
+.intercom-launcher-frame {
+  @include breakpoint(medium down) {
+    bottom: rem-calc(30) !important;
+    right: rem-calc(30) !important;
+  }
+}

@@ -1,0 +1,84 @@
+.news-post-feature-image-wrapper {
+  position: relative;
+
+  @include breakpoint(medium) {
+    margin-bottom: -1rem;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: -2rem;
+  }
+
+  &::before {
+    background-color: $primary-color;
+    background-image: url("/assets/img/dots-bg.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: rem-calc(1120) auto;
+    content: "";
+    height: calc(50% + 3rem);
+    left: 0;
+    position: relative;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include breakpoint(large) {
+      background-size: rem-calc(1920) auto;
+    }
+  }
+}
+
+.news-post-feature-image {
+  background-color: $tertiary-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: $global-radius;
+  margin: 5rem auto 2rem auto;
+  max-width: rem-calc(750);
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(large) {
+    margin: 6rem auto 2rem auto;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 42.09%;
+    width: 100%;
+  }
+}
+
+.news-post-content-wrapper {
+  margin: 0 auto;
+  max-width: rem-calc(600);
+
+  @include breakpoint(large) {
+    max-width: rem-calc(750);
+  }
+
+  h1:first-child,
+  .subheading:nth-child(2) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: rem-calc(550);
+    text-align: center;
+
+    @include breakpoint(large) {
+      max-width: rem-calc(700);
+    }
+  }
+}
+
+.news-post-back {
+  border-top: 1px solid $light-gray;
+  margin: 5rem 0 2rem;
+  padding-top: 2rem;
+
+  @include breakpoint(large) {
+    font-size: rem-calc(20);
+  }
+}

@@ -1,0 +1,216 @@
+.content-block {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+  @include breakpoint(medium) {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+
+  @include breakpoint(huge) {
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+  }
+
+  &[class*="background-"] {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+
+    @include breakpoint(large) {
+      padding-bottom: 5rem;
+      padding-top: 5rem;
+    }
+
+    @include breakpoint(huge) {
+      padding-bottom: 6rem;
+      padding-top: 6rem;
+    }
+
+    + [class*="background-"] {
+      margin-top: -3rem;
+
+      @include breakpoint(medium) {
+        margin-top: -4rem;
+      }
+
+      @include breakpoint(large) {
+        margin-top: -5rem;
+      }
+
+      @include breakpoint(huge) {
+        margin-top: -6rem;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.content-row {
+  margin-bottom: -1rem;
+  max-width: rem-calc(550);
+
+  @include breakpoint(medium) {
+    max-width: rem-calc(700);
+  }
+
+  @include breakpoint(large) {
+    max-width: rem-calc(1078);
+  }
+
+  p,
+  li {
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(18);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 3rem;
+
+    @include breakpoint(medium) {
+      margin-top: 4rem;
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+
+    @include breakpoint(medium) {
+      margin-top: 3rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h4 {
+    + h1,
+    + h2,
+    + h3,
+    + h4 {
+      margin-top: 0;
+    }
+  }
+
+  h4,
+  h5 {
+    color: $primary-color;
+  }
+
+  figure {
+    margin: 2rem 0;
+
+    @include breakpoint(large) {
+      margin: 3rem 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+
+      @include breakpoint(large) {
+        margin-top: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 1rem;
+
+      @include breakpoint(large) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      margin-top: 2rem;
+    }
+
+    + figure {
+      margin-top: -1rem;
+
+      @include breakpoint(large) {
+        margin-top: -2rem;
+      }
+    }
+  }
+
+  a:not([class]) {
+    text-decoration: underline;
+  }
+
+  a.button {
+    @extend .button.large;
+  }
+
+  p.button {
+    position: relative;
+
+    @extend .button.large;
+
+    a {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .column,
+  .columns {
+    margin-bottom: 1rem;
+
+    @include breakpoint(large) {
+      margin-bottom: 2rem;
+    }
+
+    &:last-child {
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

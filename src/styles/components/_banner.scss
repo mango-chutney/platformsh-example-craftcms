@@ -1,0 +1,192 @@
+$banner-breakpoint: medium down;
+
+.banner-wrapper {
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: rem-calc(1120) auto;
+  padding: 0 !important;
+
+  @include breakpoint(large) {
+    background-size: rem-calc(1920) auto;
+  }
+
+  &.overflow {
+    &.background-primary {
+      background-image: url("/assets/img/dots-bg.png");
+    }
+
+    &.background-quaternary {
+      background-image: url("/assets/img/dots-bg-orange.png");
+    }
+  }
+
+  > .row {
+    max-width: calc(#{$global-width} + 4rem);
+
+    @include breakpoint(large) {
+      max-width: calc(#{$global-width} + 8rem);
+    }
+  }
+
+  .app-store-buttons-container {
+    display: flex;
+    flex-flow: row;
+
+    img {
+      margin: 0;
+      padding: 0 1rem 0 0;
+    }
+
+    @include breakpoint($banner-breakpoint) {
+      justify-content: center;
+      padding: 0 1rem;
+    }
+  }
+}
+
+.banner-container {
+  position: relative;
+
+  @include breakpoint(large) {
+    padding: 0 2rem;
+  }
+}
+
+.banner-content {
+  margin: 0 auto;
+  max-width: rem-calc(500);
+  padding: 3rem 1rem;
+
+  @include breakpoint(medium) {
+    padding: 4rem 1rem;
+  }
+
+  @include breakpoint(large) {
+    max-width: none;
+    padding: 4rem 0;
+  }
+
+  @include breakpoint(xxlarge) {
+    padding: 5rem 3rem 5rem 0;
+  }
+
+  .button {
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    @include breakpoint(large) {
+      width: auto;
+    }
+
+    @include breakpoint(xlarge) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+.banner-title {
+  font-weight: $global-weight-bold;
+
+  br {
+    @include breakpoint(large down) {
+      display: none;
+    }
+  }
+}
+
+.banner-subtitle {
+  font-weight: $global-weight-medium;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @include breakpoint($banner-breakpoint) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// put this class in the column with the image
+.banner-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+
+  img {
+    height: 100%;
+    max-width: none;
+    width: auto;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  .overflow & {
+    background-position: bottom center;
+    background-size: 100% auto;
+  }
+}
+
+// put this class in the row
+.banner-image-container {
+  &.right {
+    .banner-image {
+      right: 0;
+    }
+  }
+
+  @include breakpoint(large) {
+    min-height: rem-calc(320);
+
+    .column,
+    .columns {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    min-height: rem-calc(420);
+  }
+
+  @include breakpoint($banner-breakpoint) {
+    text-align: center;
+  }
+}
+
+.banner-image-small {
+  text-align: center;
+
+  img {
+    max-width: rem-calc(450);
+    width: 100%;
+  }
+
+  .overflow & {
+    margin-top: -2rem;
+  }
+
+  .full-image & {
+    padding: 0;
+    width: unset;
+
+    img {
+      margin: 0 auto;
+      max-width: none;
+    }
+  }
+}

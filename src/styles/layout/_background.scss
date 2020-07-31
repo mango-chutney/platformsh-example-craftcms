@@ -1,0 +1,33 @@
+// Colors
+@each $name, $color in $foundation-palette {
+  .background-#{$name} {
+    background-color: $color;
+  }
+}
+
+.background-gray {
+  background-color: $light-gray;
+}
+
+.background-cover {
+  background-size: cover;
+}
+
+.background-half-wrapper {
+  position: relative;
+}
+
+.background-half {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  .columns,
+  .column {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+}

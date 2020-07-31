@@ -1,0 +1,25 @@
+.page-home {
+  .juicer-load-more-wrapper {
+    display: none;
+  }
+
+  .juicer-image-container {
+    @include breakpoint(large down) {
+      &:nth-child(n + 19) {
+        display: none;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      &:nth-child(n + 13) {
+        display: none;
+      }
+    }
+
+    @include breakpoint(small down) {
+      &:nth-child(n + 13) {
+        display: none;
+      }
+    }
+  }
+}

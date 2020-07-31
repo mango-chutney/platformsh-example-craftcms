@@ -1,0 +1,54 @@
+/**
+ *  main.scss
+ */
+
+$tristicons-font-path: "fonts";
+
+@import "tristicons";
+@import "style";
+@import "abstracts/palette";
+@import "abstracts/variables";
+@import "abstracts/foundation-settings";
+@import "abstracts/foundation-import";
+@import "abstracts/mixins";
+@import "base/base";
+@import "base/fonts";
+@import "components/button";
+@import "components/banner";
+@import "components/burger";
+@import "components/loader";
+@import "components/achievement";
+@import "components/downloads";
+@import "components/campaign";
+@import "components/state-leaderboards";
+@import "components/juicer";
+@import "components/faqs";
+@import "components/excerpts";
+@import "components/input-button";
+@import "components/ticker";
+@import "components/download-app";
+@import "components/video-modal";
+@import "components/video";
+@import "components/image-gallery";
+@import "components/form";
+@import "components/top-leaderboards";
+@import "components/honey-pot";
+@import "components/registration-selection";
+@import "components/feature-icons";
+@import "base/typography";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/navigation";
+@import "layout/background";
+@import "layout/padding";
+@import "layout/hero-page";
+@import "layout/box";
+@import "layout/content-blocks";
+@import "layout/hero-home";
+@import "pages/chinville";
+@import "pages/home";
+@import "pages/events";
+@import "pages/media-centre";
+@import "pages/news";
+@import "pages/school";

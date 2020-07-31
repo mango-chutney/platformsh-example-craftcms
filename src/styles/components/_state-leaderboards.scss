@@ -1,0 +1,79 @@
+.state-fundraising-totals-wrapper {
+  opacity: 1;
+  transition: all 300ms ease;
+  visibility: visible;
+
+  &.loading {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.state-fundraising-totals-container {
+  background: $white;
+  border: $global-border;
+  border-radius: $global-radius;
+  margin: 0 auto;
+  max-width: rem-calc(835);
+  padding: 4rem 2rem;
+
+  @include breakpoint(medium down) {
+    max-width: rem-calc(700);
+    padding: 3rem 2rem;
+  }
+}
+
+.state-fundraising-totals-amount {
+  background: $primary-color;
+  border-radius: 0 $global-radius $global-radius 0;
+  color: $white;
+  display: block;
+  font-weight: 600;
+  max-width: 100%;
+  min-width: rem-calc(100);
+  padding: rem-calc(10);
+  position: relative;
+  text-align: right;
+  transition: all 300ms ease;
+  width: 0;
+}
+
+.state-fundraising-totals-state-container {
+  float: left;
+  margin: 0;
+  overflow: hidden;
+  padding: rem-calc(10) 2rem rem-calc(10) 0;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.state-fundraising-totals-amount-container {
+  border-left: $global-border;
+  margin-bottom: rem-calc(5);
+  max-width: rem-calc(300);
+  padding-left: 0;
+}
+
+.state-fundraising-totals-heading {
+  font-weight: $global-weight-semibold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.state-leaderboard-state {
+  font-weight: $global-weight-medium;
+
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.state-leaderboard-abbr {
+  display: none;
+  font-weight: $global-weight-semibold;
+
+  @include breakpoint(small down) {
+    display: block;
+  }
+}

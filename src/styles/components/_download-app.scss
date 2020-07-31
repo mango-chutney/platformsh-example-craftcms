@@ -1,0 +1,46 @@
+.download-app-container {
+  .row {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    @include breakpoint(small down) {
+      flex-flow: column-reverse;
+    }
+  }
+}
+
+.app-store-buttons-container {
+  img {
+    height: rem-calc(57);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    width: auto;
+
+    @include breakpoint(medium down) {
+      height: rem-calc(50);
+    }
+  }
+}
+
+.download-app-image {
+  float: left;
+  padding-top: 2rem;
+  text-align: center;
+
+  @include breakpoint(small down) {
+    float: none;
+  }
+
+  img {
+    max-width: rem-calc(500);
+    width: 100%;
+  }
+}
+
+.download-app-content {
+  @include breakpoint(small down) {
+    padding: 0 0 2rem;
+  }
+}

@@ -1,0 +1,171 @@
+#school-registration-selection {
+  min-height: 30vh;
+}
+
+.school-team-search-wrapper {
+  .row {
+    max-width: rem-calc(700);
+
+    @include breakpoint(large) {
+      max-width: rem-calc(1078);
+    }
+  }
+}
+
+.page-school {
+  .feature-icons-wrapper-inner {
+    .row {
+      max-width: rem-calc(700);
+
+      @include breakpoint(large) {
+        max-width: rem-calc(1078);
+      }
+    }
+  }
+
+  .feature-icon {
+    background: transparent;
+
+    @include breakpoint(medium down) {
+      max-width: rem-calc(300);
+    }
+
+    h4 {
+      @include breakpoint(large) {
+        font-size: rem-calc(26);
+      }
+    }
+
+    p {
+      color: $primary-color;
+      font-weight: $global-weight-normal;
+
+      @include breakpoint(large) {
+        font-size: rem-calc(20);
+      }
+    }
+  }
+
+  .feature-icon-container {
+    width: calc(33% - 2rem);
+
+    @include breakpoint(small down) {
+      margin: 0.5rem;
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      .feature-icon-image-inner {
+        &::before {
+          background-image: url("/assets/img/particles/school-icon-01.svg");
+        }
+      }
+
+      .feature-icon-image-container {
+        &::after {
+          content: "1";
+        }
+
+        &::before {
+          background-image: url("/assets/img/particles/school-connector-01.svg");
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      .feature-icon-image-inner {
+        &::before {
+          background-image: url("/assets/img/particles/school-icon-02.svg");
+        }
+      }
+
+      .feature-icon-image-container {
+        &::after {
+          content: "2";
+        }
+
+        &::before {
+          background-image: url("/assets/img/particles/school-connector-02.svg");
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .feature-icon-image-inner {
+        &::before {
+          background-image: url("/assets/img/particles/school-icon-03.svg");
+        }
+      }
+
+      .feature-icon-image-container {
+        &::after {
+          content: "3";
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(n + 4) {
+      display: none;
+    }
+  }
+
+  .feature-icon-content-container {
+    padding: 0;
+  }
+
+  .feature-icon-image-container {
+    margin-top: 2rem;
+
+    &::before {
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      content: "";
+      display: block;
+      height: 200%;
+      pointer-events: none;
+      top: -50%;
+      width: 200%;
+      z-index: -1;
+
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+
+    &::after {
+      align-items: center;
+      background: $white;
+      border: 3px solid $primary-color;
+      border-radius: 50%;
+      color: $black;
+      display: flex;
+      font-size: rem-calc(24);
+      font-weight: $global-weight-bold;
+      height: rem-calc(35);
+      justify-content: center;
+      left: 1rem;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: rem-calc(35);
+      z-index: -1;
+    }
+  }
+
+  .feature-icon-image-inner {
+    @include breakpoint(large) {
+      max-width: rem-calc(190);
+    }
+
+    &::before {
+      left: -14%;
+      width: 128%;
+    }
+  }
+}

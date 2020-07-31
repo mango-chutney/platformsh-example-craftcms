@@ -1,0 +1,93 @@
+.button {
+  font-weight: $global-weight-semibold;
+  position: relative;
+  top: 0;
+  transition: background-color 300ms ease,
+ border 300ms ease,
+ color 300ms ease,
+    top 50ms ease;
+
+  &:active {
+    top: 2px;
+  }
+
+  &.white {
+    color: $black;
+  }
+
+  a {
+    color: white;
+  }
+
+  // Colors
+  @each $name, $color in $foundation-palette {
+    &.text-#{$name} {
+      color: $color;
+
+      @include hocus() {
+        color: lighten($color, 10%);
+      }
+    }
+  }
+
+  &.large {
+    @include breakpoint(medium down) {
+      font-size: 1rem;
+    }
+  }
+
+  &.larger {
+    @include breakpoint(medium down) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &.wide {
+    padding: 0.85em 3em;
+
+    @include breakpoint(medium down) {
+      padding: 0.85em 2.5em;
+    }
+  }
+
+  &.particles {
+    transform-style: preserve-3d;
+
+    &::before,
+    &::after {
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 260%;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: -80%;
+      transform: scale(1) translateZ(-1px);
+      transition: transform 300ms ease, opacity 300ms ease 700ms;
+      width: 100%;
+    }
+
+    &::before {
+      background-image: url("/assets/img/particles/button-01.svg");
+      background-position: left;
+      left: -15%;
+    }
+
+    &::after {
+      background-image: url("/assets/img/particles/button-02.svg");
+      background-position: right;
+      right: -15%;
+    }
+
+    &:active {
+      &::before,
+      &::after {
+        opacity: 1;
+        transform: scale(0) translateZ(-1px);
+        transition: 0s;
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+$events-breakpoint-medium: medium down;
+$events-breakpoint: small down;
+
+.events-search-container {
+  max-width: rem-calc(530);
+
+  h3 {
+    font-weight: $global-weight-semibold;
+  }
+}
+
+.events-wrapper {
+  background: $medium-gray;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    background: #fefefe;
+    content: "";
+    display: block;
+    height: rem-calc(130);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.events-container {
+  list-style: none;
+  position: relative;
+}
+
+.event-item-container {
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.event {
+  background: $white;
+  border: $global-border;
+  border-radius: $global-radius;
+  height: 100%;
+  position: relative;
+}
+
+.event-image-container {
+  background-color: darken($medium-gray, 2%);
+  background-position: center;
+  background-size: cover;
+  display: block;
+  float: left;
+  height: 100%;
+  width: rem-calc(300);
+
+  @include breakpoint($events-breakpoint-medium) {
+    width: rem-calc(250);
+  }
+
+  @include breakpoint($events-breakpoint) {
+    float: none;
+    height: rem-calc(200);
+    width: 100%;
+  }
+}
+
+.event-content {
+  display: inline-block;
+  float: right;
+  height: 100%;
+  overflow: auto;
+  padding: 2rem;
+  width: calc(100% - #{rem-calc(300)});
+
+  .event-title {
+    color: $black;
+    display: inline-block;
+    font-weight: $global-weight-semibold;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+  }
+
+  @include breakpoint($events-breakpoint-medium) {
+    width: calc(100% - 250px);
+  }
+
+  @include breakpoint($events-breakpoint) {
+    float: none;
+    height: calc(100% - #{rem-calc(200)});
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: #f0f2f5;
+    width: 0.4rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    box-shadow: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #d1d3dc;
+    border-radius: 500px;
+    box-shadow: none;
+    opacity: 0.5;
+  }
+}
+
+.event-description {
+  color: $body-font-color;
+}
+
+.event-details {
+  margin-bottom: $global-margin;
+}
+
+.event-date {
+  color: $body-font-color;
+  font-weight: $global-weight-semibold;
+}
+
+.event-time {
+  border-left: $global-border;
+  color: $body-font-color;
+  font-weight: $global-weight-semibold;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.event-address {
+  font-weight: $global-weight-semibold;
+
+  @include breakpoint($events-breakpoint) {
+    display: block;
+  }
+}

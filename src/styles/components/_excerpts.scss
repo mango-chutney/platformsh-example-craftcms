@@ -1,0 +1,151 @@
+@mixin excerpt-container() {
+  display: block;
+  // scss-lint:disable DuplicateProperty
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+@mixin excerpt-item-container() {
+  border-radius: $global-radius;
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 100%;
+
+  &[data-display-state="hidden"] {
+    &,
+    img {
+      display: none;
+    }
+  }
+}
+
+@mixin excerpt() {
+  border: $global-border;
+  border-radius: $global-radius;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  overflow: hidden;
+
+  @include breakpoint(large down) {
+    max-width: rem-calc(360);
+  }
+}
+
+@mixin excerpt-image-container() {
+  background-color: $dark-gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: rem-calc(250);
+  position: relative;
+  transition: all 300ms ease;
+
+  &::before {
+    background: $black;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 300ms ease;
+    width: 100%;
+  }
+}
+
+@mixin excerpt-content() {
+  background-color: $white;
+  border-bottom-left-radius: $global-radius;
+  border-bottom-right-radius: $global-radius;
+  border-top: 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 2rem;
+  position: relative;
+
+  p {
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  h4 {
+    color: $black;
+    display: inline-block;
+    margin-bottom: $global-margin;
+    width: 100%;
+  }
+}
+
+@mixin excerpt-image-hover() {
+  transform: scale(1.25);
+
+  &::before {
+    opacity: 0.5;
+  }
+
+  &::after {
+    opacity: 1;
+  }
+}
+
+.excerpt-container {
+  @include excerpt-container();
+}
+
+.excerpt-item-container {
+  @include excerpt-item-container();
+
+  @include hocus() {
+    .excerpt-image-container {
+      @include excerpt-image-hover();
+    }
+  }
+}
+
+.excerpt {
+  @include excerpt();
+}
+
+.excerpt-image-container {
+  @include excerpt-image-container();
+}
+
+.excerpt-content {
+  @include excerpt-content();
+}
+
+.excerpt-description {
+  color: $body-font-color;
+}
+
+.excerpt-details {
+  margin-bottom: $global-margin;
+}
+
+.excerpt-date {
+  color: $body-font-color;
+  font-weight: $global-weight-semibold;
+}
+
+.excerpt-time {
+  color: $body-font-color;
+  font-weight: $global-weight-semibold;
+}
+
+.excerpt-address {
+  font-weight: $global-weight-semibold;
+}
+
+.excerpt-button-container {
+  margin-top: auto;
+}

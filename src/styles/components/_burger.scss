@@ -1,0 +1,78 @@
+@mixin burger(
+  $width: 25px,
+  $height: 2px,
+  $gutter: 5px,
+  $color: $white,
+  $border-radius: 0,
+  $transition-duration: 0.3s
+) {
+  $burger-height: $height;
+  $burger-gutter: $gutter;
+
+  margin-bottom: $height + $gutter;
+  margin-top: $height + $gutter;
+  position: relative;
+  text-align: left;
+
+  &,
+  &::before,
+  &::after {
+    background-color: $color;
+    display: inline-block;
+    height: $height;
+    transition-duration: $transition-duration;
+    transition-property: background-color, transform;
+    width: $width;
+
+    @if $border-radius != 0 {
+      border-radius: $border-radius;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    top: -($height + $gutter);
+  }
+
+  &::after {
+    top: $height + $gutter;
+  }
+}
+
+@mixin burger-to-cross($height: 2px, $gutter: 5px) {
+  $burger-height: $height;
+  $burger-gutter: $gutter;
+
+  background-color: transparent;
+
+  &::before {
+    transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+  }
+}
+
+.burger-container {
+  display: block;
+
+  a {
+    display: block;
+  }
+}
+
+.burger {
+  @include burger();
+
+  vertical-align: middle;
+}
+
+.burger-to-cross {
+  @include burger-to-cross();
+}

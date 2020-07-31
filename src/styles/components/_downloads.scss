@@ -1,0 +1,176 @@
+.downloads-wrapper {
+  &:not(:first-child) {
+    margin-top: -3rem;
+
+    @include breakpoint(large) {
+      margin-top: -5rem;
+    }
+  }
+}
+
+.downloads {
+  display: flex;
+  flex-flow: row nowrap;
+
+  @include breakpoint(medium down) {
+    flex-flow: column;
+  }
+}
+
+.download-tabs-wrapper {
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+.downloads-select {
+  color: $black;
+  display: none;
+  font-size: rem-calc(18);
+  font-weight: $global-weight-semibold;
+  height: rem-calc(60);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-indent: 1rem;
+
+  @include breakpoint(medium down) {
+    display: block;
+  }
+}
+
+.download-tabs-container {
+  background-color: $light-gray;
+  margin-right: 3rem;
+  min-width: rem-calc(250);
+  padding: 0.5rem 3rem 1rem 2rem;
+}
+
+.downloads-tab {
+  border-bottom: $global-border;
+  cursor: pointer;
+  display: block;
+  font-weight: $global-weight-medium;
+  margin-right: 0.25rem;
+  padding: 1rem 1.5rem 1rem 0;
+  position: relative;
+  transition: $global-transition;
+  z-index: +1;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include hocus() {
+    color: $black;
+  }
+
+  &.active {
+    color: $primary-color;
+    font-weight: $global-weight-semibold;
+    position: relative;
+  }
+}
+
+.downloads-container {
+  background-color: $white;
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.downloads-files {
+  display: none;
+  flex-direction: column;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.downloads-file {
+  align-items: center;
+  border-bottom: $global-border;
+  display: flex;
+  font-weight: $global-weight-medium;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  position: relative;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include hocus() {
+    background-color: rgba($primary-color, 0.1);
+
+    .downloads-title,
+    .downloads-description {
+      color: $primary-color;
+    }
+  }
+}
+
+.downloads-title {
+  color: $black;
+  flex: 3;
+  font-weight: $global-weight-semibold;
+  margin-right: 1rem;
+  padding: 0.5rem 0;
+}
+
+.downloads-description {
+  color: $black;
+  flex: 1;
+  font-weight: $global-weight-medium;
+}
+
+.downloads-icon {
+  align-items: center;
+  border-radius: 4px;
+  flex: 0 0 auto;
+  height: rem-calc(60);
+  justify-content: center;
+  margin-right: 2rem;
+  overflow: hidden;
+  position: relative;
+  width: rem-calc(40);
+
+  i {
+    align-items: center;
+    background-color: lighten($primary-color, 40%);
+    color: lighten($primary-color, 15%);
+    display: flex;
+    font-size: rem-calc(27);
+    font-weight: $global-weight-normal;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.downloads-file-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.downloads-action {
+  display: none;
+  flex: 1;
+  text-align: right;
+}
+
+.downloads-extension {
+  text-transform: uppercase;
+}

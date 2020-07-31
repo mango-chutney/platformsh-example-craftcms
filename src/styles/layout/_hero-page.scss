@@ -1,0 +1,122 @@
+$hero-breakpoint: medium down;
+
+.hero-wrapper {
+  background-color: $primary-color;
+  background-image: url("/assets/img/dots-bg.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: rem-calc(1120) auto;
+  overflow: hidden;
+  position: relative;
+
+  h1 {
+    font-weight: $global-weight-bold;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(44);
+    }
+  }
+
+  img {
+    bottom: 0;
+    max-height: 100%;
+    position: absolute;
+  }
+
+  @include breakpoint($hero-breakpoint) {
+    text-align: center;
+
+    img {
+      max-height: rem-calc(300);
+      position: relative;
+    }
+  }
+
+  .button {
+    margin-top: $global-margin * 1;
+  }
+
+  .row {
+    position: relative;
+    width: 100%;
+  }
+
+  @include breakpoint(large) {
+    background-size: rem-calc(1920) auto;
+  }
+}
+
+.hero-content-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: rem-calc(420);
+
+  > * {
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    font-size: 0;
+    min-height: inherit;
+  }
+
+  @include breakpoint(large down) {
+    min-height: rem-calc(300);
+  }
+
+  @include breakpoint($hero-breakpoint) {
+    margin: 0 auto;
+    max-width: rem-calc(600);
+    min-height: 0;
+  }
+
+  @include breakpoint(small down) {
+    max-width: rem-calc(350);
+  }
+}
+
+.hero-content-container {
+  padding: 7rem 1rem 6rem 0;
+  width: 100%;
+
+  @include breakpoint($hero-breakpoint) {
+    padding: 7rem 1rem 3.5rem;
+  }
+}
+
+.hero-subheading {
+  line-height: 1.4;
+}
+
+.hero-buttons-container {
+  margin-top: $global-margin * 2;
+}
+
+.hero-button {
+  display: block;
+}
+
+.hero-image-container {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  bottom: -1px;
+  height: 200%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+  @include breakpoint(large) {
+    right: -2rem;
+    width: calc(50% + 2rem);
+  }
+
+  @include breakpoint($hero-breakpoint) {
+    background-image: none !important;
+    margin-top: -1.5rem;
+    position: relative;
+  }
+}

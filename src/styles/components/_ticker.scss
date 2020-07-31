@@ -1,0 +1,59 @@
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-container {
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+}
+
+.ticker-mask {
+  background-color: $white;
+  border-top: $global-border;
+  bottom: 0;
+  height: 3rem;
+  overflow: hidden;
+  padding-left: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.ticker-registered,
+.ticker-donated,
+.ticker-amount {
+  color: $primary-color;
+  font-weight: $global-weight-semibold;
+}
+
+.ticker {
+  animation-duration: 200s;
+  animation-iteration-count: infinite;
+  animation-name: ticker;
+  animation-timing-function: linear;
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  padding-right: 100%;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.ticker-recipient {
+  color: $black;
+  font-weight: $global-weight-semibold;
+}

@@ -12,6 +12,10 @@ module.exports = (api) => {
       ],
       '@babel/preset-typescript',
       '@babel/preset-react',
+      '@babel/preset-flow',
     ],
+    plugins: [
+      '@babel/plugin-proposal-class-properties'
+    ]
   };
 };

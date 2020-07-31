@@ -1,0 +1,14 @@
+html {
+  font-size: 100%;
+
+  @include breakpoint(huge) {
+    font-size: 110%;
+  }
+}
+
+img {
+  &.expanded,
+  &.expand {
+    width: 100%;
+  }
+}

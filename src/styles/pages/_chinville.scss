@@ -1,0 +1,62 @@
+.chinville-hero {
+  background-image: url("/assets/img/chinville/hero-chinville.jpg");
+  background-position: center;
+  background-size: cover;
+  height: rem-calc(400);
+}
+
+.chinville-videos-wrapper {
+  .columns {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    cursor: pointer;
+    display: block;
+    position: relative;
+
+    &::before {
+      @include tristicon();
+
+      color: white;
+      content: $tristicon-youtube;
+      display: block;
+      font-family: "FontAwesome";
+      font-size: 50px;
+      left: 50%;
+      opacity: 0.75;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+}
+
+.meet-the-chins {
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    width: 150px;
+  }
+}
+
+.meet-the-chins-chin {
+  margin: 0 auto;
+  max-width: rem-calc(400);
+  padding: 0 1rem;
+}
+
+.chinville-hero-02 {
+  background: url("/assets/img/chinville/hero-2015.jpg") center cover;
+  height: rem-calc(450);
+
+  @include breakpoint(small down) {
+    height: rem-calc(400);
+  }
+}

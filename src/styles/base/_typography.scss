@@ -1,0 +1,84 @@
+// Colors
+@each $name, $color in $foundation-palette {
+  .text-#{$name} {
+    color: $color;
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color;
+    }
+  }
+}
+
+.text-gray {
+  color: $regent-gray;
+}
+
+b,
+strong {
+  font-weight: $global-weight-semibold;
+}
+
+p,
+ul {
+  font-size: rem-calc(16);
+}
+
+h1 {
+  @include breakpoint(large) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+h3 {
+  font-weight: $global-weight-medium;
+}
+
+h5 {
+  font-weight: $global-weight-medium;
+  line-height: 1.4;
+}
+
+h4 {
+  font-weight: $global-weight-medium;
+  line-height: 1.4;
+}
+
+.heading-wrapper {
+  margin: 0 auto 2.5rem;
+  max-width: rem-calc(500);
+  text-align: center;
+
+  br {
+    display: none;
+  }
+
+  @include breakpoint(medium) {
+    max-width: rem-calc(615);
+
+    br {
+      display: block;
+    }
+  }
+
+  @include breakpoint(large) {
+    margin: 0 auto 3rem;
+    max-width: rem-calc(920);
+    padding: 0 1rem;
+  }
+}
+
+.subheading {
+  color: $primary-color;
+  font-weight: $global-weight-medium;
+  margin-bottom: 2rem;
+
+  @include breakpoint(large) {
+    margin-bottom: 2.5rem;
+  }
+}

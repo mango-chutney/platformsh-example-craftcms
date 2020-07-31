@@ -1,0 +1,65 @@
+// section paddins by foundation-francisco
+$padding-sizes: (
+  small: (
+    xsmall: 0.5rem,
+    small: 1rem,
+    medium: 2rem,
+    large: 4rem,
+    xlarge: 6rem,
+  ),
+  medium: (
+    xsmall: 0.5rem,
+    small: 1rem,
+    medium: 2rem,
+    large: 6rem,
+    xlarge: 8rem,
+  ),
+);
+
+@each $breakpoint-size, $breakpoint in $padding-sizes {
+  @include breakpoint($breakpoint-size) {
+    @each $size, $value in map-remove($breakpoint, default) {
+      .padding-#{$size} {
+        padding-bottom: $value;
+        padding-top: $value;
+
+        &.padding-top-only {
+          padding-bottom: 0;
+        }
+
+        &.padding-bottom-only {
+          padding-top: 0;
+        }
+      }
+
+      .padding-bottom-#{$size} {
+        padding-bottom: $value;
+      }
+
+      .padding-top-#{$size} {
+        padding-top: $value;
+      }
+
+      .margin-#{$size} {
+        margin-bottom: $value;
+        margin-top: $value;
+
+        &.margin-top-only {
+          margin-bottom: 0;
+        }
+
+        &.margin-bottom-only {
+          margin-top: 0;
+        }
+      }
+
+      .margin-bottom-#{$size} {
+        margin-bottom: $value;
+      }
+
+      .margin-top-#{$size} {
+        padding-top: $value;
+      }
+    }
+  }
+}

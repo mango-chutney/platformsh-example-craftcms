@@ -1,0 +1,191 @@
+.feature-icons-wrapper {
+  overflow: visible;
+  text-align: center;
+
+  &:not(:first-child) {
+    margin-top: -2rem;
+  }
+
+  .row {
+    @include breakpoint(medium down) {
+      margin: 0 auto;
+      max-width: rem-calc(700);
+    }
+    @include breakpoint(small down) {
+      max-width: rem-calc(480);
+    }
+  }
+}
+
+.feature-icons-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: -4.5rem -1rem 0;
+
+  @include breakpoint(xlarge down) {
+    margin: -3.5rem -1rem 0;
+  }
+
+  @include breakpoint(medium down) {
+    margin: -2rem -0.5rem 0;
+  }
+}
+
+.feature-icon-container {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  margin: 1rem;
+  width: calc(25% - 2rem);
+
+  @include breakpoint(medium down) {
+    margin: 0.5rem;
+    width: calc(50% - 1rem);
+  }
+
+  &:nth-child(2) {
+    .feature-icon-image-inner {
+      &::before {
+        background-image: url("/assets/img/particles/icon-02.svg");
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .feature-icon-image-inner {
+      &::before {
+        background-image: url("/assets/img/particles/icon-03.svg");
+      }
+    }
+  }
+
+  &:nth-child(4) {
+    .feature-icon-image-inner {
+      &::before {
+        background-image: url("/assets/img/particles/icon-04.svg");
+      }
+    }
+  }
+}
+
+.feature-icon {
+  background: $light-gray;
+  color: $body-font-color;
+  display: block;
+  position: relative;
+  width: 100%;
+
+  h4 {
+    font-weight: $global-weight-semibold;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $body-font-color;
+    font-weight: $global-weight-medium;
+    line-height: 1.3;
+    margin-bottom: 0;
+
+    @include breakpoint(large) {
+      font-size: rem-calc(18);
+    }
+  }
+
+  @include hocus() {
+    .feature-icon-image {
+      transform: scale(1.1);
+      transition: all 150ms ease;
+
+      @include breakpoint(large) {
+        transform: scale(1.15);
+      }
+    }
+
+    .feature-icon-image-inner {
+      &::before {
+        transform: scale(1);
+
+        @include breakpoint(large) {
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+}
+
+.feature-icon-image-inner {
+  margin: 0 auto;
+  max-width: rem-calc(135);
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(large) {
+    max-width: rem-calc(150);
+  }
+
+  @include breakpoint(xlarge) {
+    max-width: rem-calc(175);
+  }
+
+  &::before {
+    background-image: url("/assets/img/particles/icon-01.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: block;
+    height: 148%;
+    left: -24%;
+    position: absolute;
+    top: -24%;
+    transform: scale(0);
+    transition: all 300ms ease;
+    width: 148%;
+  }
+}
+
+.feature-icon-image-container {
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  position: relative;
+
+  @include breakpoint(medium down) {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  &::before {
+    background: white;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.feature-icon-content-container {
+  padding: 0 2rem 2rem;
+
+  @include breakpoint(medium down) {
+    padding: 0 1rem 1.5rem;
+  }
+}
+
+.feature-icon-image {
+  position: relative;
+  transition: all 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s;
+  width: 100%;
+}
+
+.achievement-icons {
+  transform: scale(1);
+  transition: all 150ms ease;
+
+  @include hocus() {
+    transform: scale(1.1);
+    transition: all 150ms ease;
+  }
+}

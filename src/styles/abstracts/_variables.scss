@@ -1,0 +1,68 @@
+/**
+ *  variables.scss
+ */
+
+// selector use increase specificity
+// @type String
+
+// regular font family
+// @type List
+$text-font-stack: "proxima-nova", "Helvetica Neue Light", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif;
+
+// brand color
+// @type Color
+$brand-color: $resolution-blue;
+
+// social media colors
+// @type Color
+$facebook-color: #3b5998;
+
+// @type Color
+$twitter-color: #1da1f2;
+
+// @type Number
+$global-border-width: 1px;
+
+// @type Color
+$global-border-color: $mystic;
+
+// @type List
+$global-border: $global-border-width solid $global-border-color;
+
+// @type Number
+$global-transition-duration: 300ms;
+
+// @type String
+$global-transition-timing-function: ease;
+
+// @type String
+$global-transition: all $global-transition-duration
+  $global-transition-timing-function;
+
+// @type Number
+$global-font-size: 14px;
+
+// @type Number
+$tristicons-font-size-base: 1.5 * $global-font-size;
+
+// @type Color
+$spinkit-spinner-color: $dodger-blue;
+
+// @type Number
+$button-padding--vertical: 0.75em;
+
+// @type Number
+$button-padding--horizontal: 1.5em;
+
+// @type String
+$mobile-breakpoint: small down;
+
+// logo color
+$logo-color: $cerulean;
+
+// leukaemia color
+$lf-color: $gulf-blue;
+
+// header background
+$header-background: $blue-zodiac;
