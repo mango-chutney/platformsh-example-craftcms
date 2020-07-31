@@ -69,9 +69,6 @@ module.exports = {
           flatten: true,
         },
       ],
-      options: {
-        copyUnmodified: true,
-      },
     }),
     new ManifestPlugin({
       basePath: 'assets/',
