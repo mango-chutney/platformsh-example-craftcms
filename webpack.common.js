@@ -62,8 +62,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.[hash].css',
     }),
-    new CopyPlugin(
-      [
+    new CopyPlugin({
+      patterns: [
         {
           from: path.resolve('./src/static'),
           flatten: true,
@@ -72,7 +72,7 @@ module.exports = {
       {
         copyUnmodified: true,
       },
-    ),
+    }),
     new ManifestPlugin({
       basePath: 'assets/',
       writeToFileEmit: true,
