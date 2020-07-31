@@ -53,8 +53,3 @@ hooks:
     nvm install 12.18.3
     npm install
     npm run webpack:build
-    
-mounts:
-    'config':
-        source: local
-        source_path: config
