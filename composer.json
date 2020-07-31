@@ -1,3 +1,4 @@
+  
 {
   "name": "craftcms/craft",
   "description": "Craft CMS",
@@ -7,7 +8,7 @@
     "craftcms",
     "project"
   ],
-  "license": "MIT",
+  "license": "Unlicense",
   "homepage": "https://craftcms.com/",
   "type": "project",
   "support": {
@@ -18,21 +19,30 @@
     "docs": "https://craftcms.com/docs",
     "rss": "https://craftcms.com/changelog.rss"
   },
-  "minimum-stability": "beta",
   "require": {
-    "clubstudioltd/craft-asset-rev": "^6.0.2",
     "craftcms/cms": "^3.4.25",
-    "vlucas/phpdotenv": "^3.4.0",
-    "roave/security-advisories": "dev-master"
+    "vlucas/phpdotenv": "^3.4.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-shell": "^2.0.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
   },
   "config": {
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
   },
   "scripts": {
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ],
     "post-create-project-cmd": [
+      "@php -r \"copy('.env.example', '.env');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"rename('composer.json.default', 'composer.json');\"",
+      "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ]
   }
