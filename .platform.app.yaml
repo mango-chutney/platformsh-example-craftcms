@@ -43,6 +43,10 @@ web:
             # The front-controller script to send non-static requests to.
             passthru: "/index.php"
 
+dependencies:
+  nodejs:
+    yarn: "*"
+
 hooks:
   build: |
     unset NPM_CONFIG_PREFIX
@@ -51,5 +55,5 @@ hooks:
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     nvm current
     nvm install 12.18.3
-    npm install
-    npm run webpack:build
+    yarn install
+    yarn run webpack:build
