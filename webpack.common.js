@@ -81,11 +81,6 @@ module.exports = {
     new CopyPlugin({
       patterns:[
         {
-          from: path.resolve('./node_modules/tristicons/dist/fonts/**/*'),
-          to: './web/assets/fonts/',
-          flatten: true,
-        },
-        {
           from: path.resolve('./src/static'),
           flatten: true,
         }
