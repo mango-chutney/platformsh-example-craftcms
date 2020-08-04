@@ -1,0 +1,93 @@
+{
+  "name": "mango-components",
+  "version": "1.1.0",
+  "main": "./src/index.js",
+  "repository": "https://github.com/mango-chutney/mango-components",
+  "sideEffects": false,
+  "author": "Mango Chutney",
+  "license": "UNLICENCED",
+  "private": true,
+  "scripts": {
+    "build": "yarn run clean && ./scripts/build.sh",
+    "check": "flow check",
+    "clean": "rm -rf cjs es",
+    "install-peers": "node -e \"const peers = Object.entries(require('./package.json').peerDependencies || {}).map(d => d.join('@')).join(' '); if (peers.length) process.stdout.write('yarn add -P --no-lockfile ' + String(peers));\" | sh",
+    "lint": "npm-run-all run-prettier run-eslint check",
+    "run-eslint": "./scripts/run-eslint.sh",
+    "run-prettier": "./scripts/run-prettier.sh",
+    "test": "jest"
+  },
+  "dependencies": {
+    "classnames": "2.2.6",
+    "downshift": "^2.0.19",
+    "invariant": "^2.2.4",
+    "isomorphic-base64": "^1.0.2",
+    "lodash": "^4.17.10",
+    "match-sorter": "^2.2.3",
+    "popper.js": "1.14.4",
+    "react-day-picker": "^7.1.10",
+    "react-popper": "0.10.4",
+    "tristicons": "https://github.com/mango-chutney/tristicons/archive/7439a425b85f18f30b9cc447bbb91b7ddb23bc60.tar.gz"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-rc.1",
+    "@babel/core": "7.0.0-rc.1",
+    "@babel/plugin-proposal-class-properties": "7.0.0-rc.1",
+    "@babel/preset-env": "7.0.0-rc.1",
+    "@babel/preset-flow": "7.0.0-rc.1",
+    "@babel/preset-react": "7.0.0-rc.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "8.2.6",
+    "babel-jest": "23.4.0",
+    "babel-plugin-styled-components": "1.5.1",
+    "eslint": "5.3.0",
+    "eslint-config-mango": "https://github.com/mango-chutney/eslint-config-mango/archive/39a863115a150617cdaaf470295c5795e131932f.tar.gz",
+    "flow-bin": "0.79.0",
+    "flow-language-server": "0.6.0",
+    "flow-typed": "2.5.1",
+    "jest": "23.4.1",
+    "jest-styled-components": "5.0.1",
+    "npm-run-all": "4.1.3",
+    "prettier": "1.14.2",
+    "raf": "3.4.0",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/lib/",
+      "<rootDir>/examples/"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": ".babelrc",
+        "options": {
+          "parser": "json"
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1% in au"
+  ],
+  "peerDependencies": {
+    "luxon": "^1.3.3",
+    "polished": "^1.9.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-portal": "^4.0.0",
+    "react-redux": "^5.0.0",
+    "react-transition-group": "^2.4.0",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "styled-components": "^3.3.3"
+  },
+  "renovate": {
+    "extends": [
+      ":pinOnlyDevDependencies"
+    ]
+  }
+}

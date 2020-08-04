@@ -1,0 +1,396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form components (Input, TextArea, Checkbox, PaddedCheckbox) renders correctly 1`] = `
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fafbfc;
+  border-color: #e2e7ee;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  color: #354052;
+  display: block;
+  font-family: proxima-nova,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+  height: 2.6rem;
+  margin-bottom: 1rem;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  -webkit-transition: border-color 300ms ease;
+  transition: border-color 300ms ease;
+  width: 100%;
+}
+
+.c2::-webkit-input-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c2::-moz-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c2:-ms-input-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c2::placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c2:active,
+.c2:focus {
+  border-color: #354052;
+}
+
+.c1 {
+  display: block;
+  position: relative;
+}
+
+.c1::after {
+  color: rgba(127,143,164,0.8);
+  content: '';
+  font: normal normal normal 0.875rem tristicons;
+  line-height: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c0 {
+  color: inherit;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.c12 {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.c7 {
+  display: inline-block;
+  height: 1.25rem;
+  margin: 0;
+  position: relative;
+  width: 1.25rem;
+}
+
+.c8 {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9001;
+}
+
+.c8[disabled] {
+  cursor: not-allowed;
+}
+
+.c8:checked + .c9::before,
+.c8:checked + .c9::after {
+  left: 0;
+  top: 0;
+}
+
+.c8:checked + .c9::before {
+  background: #2ea1f8;
+  border-color: #1596f7;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c8:checked + .c9::after {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSd4TWlkWU1pZCcgd2lkdGg9JzE2LjUnIGhlaWdodD0nMTUnIHZpZXdCb3g9JzAgMCAxNi41IDE1Jz48cGF0aCBmaWxsPScjZmZmJyBmaWxsLXJ1bGU9J2V2ZW5vZGQnIGQ9J00xNi41MTUsMS4wNzEgQzE2LjM5OSwwLjgyNyAxNS45MTQsLTAuMDMwIDE1LjUxNSwwLjAwMSBDMTQuMjg5LDAuNzY1IDEyLjY5MywyLjM1NCAxMS42MzgsMy4zNjIgQzkuNTI4LDUuMzc4IDcuNTAzLDcuNDg2IDUuNTA4LDkuNjI0IEwxLjUxNiw1Ljg5NyBMMC4wMDUsNy40ODYgQzIuMjAwLDkuODM3IDQuNTY3LDEyLjM3MyA2LjUwNSwxNS4wMDAgQzguOTg2LDEwLjYzMiAxMy4wMzUsNC4zNzAgMTYuNTE1LDEuMDcxIEwxNi41MTUsMS4wNzEgWicvPjwvc3ZnPg==');
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  content: '';
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.c10 {
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  display: inline-block;
+  line-height: 1.25rem;
+  min-height: 1.25rem;
+  position: relative;
+}
+
+.c10::before,
+.c10::after {
+  border-radius: 4px;
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  height: 1.25rem;
+  vertical-align: middle;
+  width: 1.25rem;
+}
+
+.c10::before {
+  background: #fafbfc;
+  border: 1px solid #e2e7ee;
+  margin-right: 1rem;
+}
+
+.c10::after {
+  border: 1px solid transparent;
+  left: 0;
+  line-height: 1.25rem;
+  margin-top: 5%;
+  position: absolute;
+  text-align: center;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.c11 {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.c6 {
+  margin: 1rem 0;
+}
+
+.c13::after {
+  content: "\\f10a";
+}
+
+.c15 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fafbfc;
+  border-color: #e2e7ee;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  color: #354052;
+  display: block;
+  font-family: proxima-nova,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+  height: 2.6rem;
+  margin-bottom: 1rem;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  -webkit-transition: border-color 300ms ease;
+  transition: border-color 300ms ease;
+  width: 100%;
+}
+
+.c15::-webkit-input-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c15::-moz-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c15:-ms-input-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c15::placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c15:active,
+.c15:focus {
+  border-color: #354052;
+}
+
+.c14::-ms-expand {
+  display: none;
+}
+
+.c14 option {
+  width: 100%;
+}
+
+.c3::after {
+  display: none;
+}
+
+.c5 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fafbfc;
+  border-color: #e2e7ee;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  color: #354052;
+  display: block;
+  font-family: proxima-nova,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+  height: 2.6rem;
+  margin-bottom: 1rem;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  -webkit-transition: border-color 300ms ease;
+  transition: border-color 300ms ease;
+  width: 100%;
+}
+
+.c5::-webkit-input-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c5::-moz-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c5:-ms-input-placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c5::placeholder {
+  color: rgba(127,143,164,0.8);
+}
+
+.c5:active,
+.c5:focus {
+  border-color: #354052;
+}
+
+.c4 {
+  height: auto;
+  padding: 1.25rem 1rem;
+  resize: vertical;
+}
+
+<form>
+  <label
+    className="c0"
+    htmlFor="input"
+    placeholder="Input"
+    type="text"
+  >
+    Input
+    <span
+      className="c1"
+    >
+      <input
+        className="c2"
+        id="input"
+        name="input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="Input"
+        type="text"
+        value=""
+      />
+    </span>
+  </label>
+  <label
+    className="c0"
+    htmlFor="textarea"
+    placeholder="Text Area"
+  >
+    Text Area
+    <span
+      className="c3 c1"
+    >
+      <textarea
+        className="c4 -textarea c5"
+        id="textarea"
+        name="textarea"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="Text Area"
+        value=""
+      />
+    </span>
+  </label>
+  <div
+    className="c6"
+  >
+    <div
+      className="c7"
+    >
+      <input
+        className="c8"
+        id="checkbox"
+        name="checkbox"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="Checkbox"
+        type="checkbox"
+        value=""
+      />
+      <div
+        className="c9 input-decorator c10"
+      />
+    </div>
+    <label
+      className="c11 c12"
+      htmlFor="checkbox"
+      placeholder="Checkbox"
+    >
+      Checkbox
+    </label>
+  </div>
+  <label
+    className="c0"
+    htmlFor="select"
+    placeholder="select"
+  >
+    select
+    <span
+      className="c13 c1"
+    >
+      <select
+        className="c14 -select c15"
+        id="select"
+        name="select"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="select"
+        value=""
+      >
+        <option
+          value="option-1"
+        >
+          Option 1
+        </option>
+        <option
+          value="option-2"
+        >
+          Option 2
+        </option>
+      </select>
+    </span>
+  </label>
+</form>
+`;

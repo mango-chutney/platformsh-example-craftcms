@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    branches:
+      ignore:
+        - gh-pages
+    docker:
+      - image: circleci/node:latest
+    environment:
+      EMAIL: "team@mangochutney.com.au"
+      GIT_COMMITTER_NAME: "Mango Chutney"
+      GIT_AUTHOR_NAME: "Mango Chutney"
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            # https://github.com/p-l-e-b
+            - "85:1c:6b:27:39:0e:31:48:df:91:e5:87:86:c3:97:f3"
+      - restore_cache:
+          key: dependency-cache-yarn-{{ checksum "package.json" }}
+      - restore_cache:
+          key: dependency-cache-examples-yarn-{{ checksum "examples/package.json" }}
+      - run: yarn && yarn run install-peers && cd examples && yarn
+      - save_cache:
+          key: dependency-cache-yarn-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - save_cache:
+          key: dependency-cache-examples-yarn-{{ checksum "examples/package.json" }}
+          paths:
+            - ./examples/node_modules
+      - run: yarn run lint
+      # With set -e, throw an error if there are any changed files (that haven't
+      # had prettier applied to them, for example).
+      - run: test -z "$(git status --porcelain)"
+      - run: yarn run test
+      - run: yarn run build
+      - run: cd examples && yarn run build
+      - run: if [ "${CIRCLE_BRANCH}" == "master" ]; then cd examples && yarn run deploy; fi
