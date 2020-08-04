@@ -82,7 +82,7 @@ module.exports = {
       patterns:[
         {
           from: path.resolve('./src/static'),
-          flatten: true,
+          flatten: false,
         }
       ]
     }),
