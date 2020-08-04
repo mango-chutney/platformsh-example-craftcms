@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "artez-client-apis": "git+ssh://git@github.com:mango-chutney/artez-client-apis.git#404b224",
+    "artez-client-apis": "file:./lib/artez-client-apis",
     "bad-words": "^3.0.0",
     "blueimp-canvas-to-blob": "^3.14.0",
     "blueimp-load-image": "^2.20.1",
@@ -26,9 +26,9 @@
     "jest-runner-prettier": "^0.2.6",
     "jquery": "1.12.2",
     "lodash": "^4.17.11",
-    "luhn-js": "git+ssh://git@github.com/mango-chutney/luhn#9fcf4ae",
+    "luhn-js": "file:./lib/luhn",
     "luxon": "^1.6.2",
-    "mango-components": "git+ssh://git@github.com/mango-chutney/mango-components.git#da5ede4",
+    "mango-components": "file:./lib/mango-components",
     "match-sorter": "^2.3.0",
     "numeral": "^2.0.6",
     "papaparse": "^4.6.1",
@@ -57,8 +57,8 @@
     "styled-media-query": "^2.1.1",
     "styled-normalize": "^8.0.4",
     "styled-spinkit": "^0.4.0",
-    "tristicons": "https://github.com/mango-chutney/tristicons/archive/ea52bc14b8d805ea8ed39e576b93afead637da40.tar.gz",
-    "udf-mapper": "git+ssh://git@github.com/mango-chutney/udf-mapper#58b254f",
+    "tristicons": "file:./lib/tristicons",
+    "udf-mapper": "file:./lib/udf-mapper",
     "unfetch": "^4.0.1"
   },
   "devDependencies": {

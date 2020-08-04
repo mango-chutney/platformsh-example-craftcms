@@ -1703,9 +1703,8 @@ arrify@^1.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
-"artez-client-apis@git+ssh://git@github.com:mango-chutney/artez-client-apis.git#404b224":
+"artez-client-apis@file:./lib/artez-client-apis":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:mango-chutney/artez-client-apis.git#404b22431ef2a825132afa921f26bb530241bc11"
   dependencies:
     lodash "^4.17.10"
 
@@ -6527,9 +6526,8 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-"luhn-js@git+ssh://git@github.com/mango-chutney/luhn#9fcf4ae":
+"luhn-js@file:./lib/luhn":
   version "1.1.2"
-  resolved "git+ssh://git@github.com/mango-chutney/luhn#9fcf4ae2a297e9cf50d2663124dc1a4273d83a93"
 
 luxon@^1.6.2:
   version "1.24.1"
@@ -6563,9 +6561,8 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
-"mango-components@git+ssh://git@github.com/mango-chutney/mango-components.git#da5ede4":
+"mango-components@file:./lib/mango-components":
   version "1.1.0"
-  resolved "git+ssh://git@github.com/mango-chutney/mango-components.git#da5ede42104a0626e2d9ebb771404a6e2678ed72"
   dependencies:
     classnames "2.2.6"
     downshift "^2.0.19"
@@ -10107,13 +10104,12 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
+"tristicons@file:./lib/tristicons":
+  version "1.0.1"
+
 "tristicons@https://github.com/mango-chutney/tristicons/archive/7439a425b85f18f30b9cc447bbb91b7ddb23bc60.tar.gz":
   version "1.0.0"
   resolved "https://github.com/mango-chutney/tristicons/archive/7439a425b85f18f30b9cc447bbb91b7ddb23bc60.tar.gz#f98e8b44504849b40a4752052e5caa1f3d2d0a20"
-
-"tristicons@https://github.com/mango-chutney/tristicons/archive/ea52bc14b8d805ea8ed39e576b93afead637da40.tar.gz":
-  version "1.0.1"
-  resolved "https://github.com/mango-chutney/tristicons/archive/ea52bc14b8d805ea8ed39e576b93afead637da40.tar.gz#d12763db7c9ab25d463257ed0438215a1d7a694c"
 
 "true-case-path@^1.0.2":
   version "1.0.3"
@@ -10189,9 +10185,8 @@ ua-parser-js@^0.7.18, ua-parser-js@^0.7.9:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.21.tgz#853cf9ce93f642f67174273cc34565ae6f308777"
   integrity sha512-+O8/qh/Qj8CgC6eYBVBykMrNtp5Gebn4dlGD/kKXVkJNDwyrAwSIqwz8CDf+tsAIWVycKcku6gIXJ0qwx/ZXaQ==
 
-"udf-mapper@git+ssh://git@github.com/mango-chutney/udf-mapper#58b254f":
+"udf-mapper@file:./lib/udf-mapper":
   version "1.0.0"
-  resolved "git+ssh://git@github.com/mango-chutney/udf-mapper#58b254f2d46208196b8b7feac4b20a84f3b522d4"
   dependencies:
     caseless "^0.12.0"
     flow-bin "^0.53.1"
