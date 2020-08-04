@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnchorButton component renders correctly 1`] = `
+.c0 {
+  background-color: #f0f3f8;
+  border-radius: 0.25rem;
+  border: 0;
+  color: #7f8fa4;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.65rem 1.25rem;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: auto;
+}
+
+.c1 {
+  background-color: #f0f3f8;
+  border-radius: 0.25rem;
+  border: 0;
+  color: #7f8fa4;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.65rem 1.25rem;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+<div>
+  <a
+    className="-a c0"
+    href=""
+  >
+    Anchor Button
+  </a>
+  <a
+    className="-a c1"
+    href=""
+  >
+    Expanded Anchor Button
+  </a>
+</div>
+`;

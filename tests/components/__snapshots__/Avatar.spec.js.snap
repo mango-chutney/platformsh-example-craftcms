@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component renders correctly 1`] = `
+.c0 {
+  background-color: '#00b4ff';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  color: #fefefe;
+  font-size: 1.125rem;
+  font-weight: 600;
+  height: 2.875rem;
+  line-height: 2.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 2.875rem;
+}
+
+.c1 {
+  background-color: '#00b4ff';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  color: #fefefe;
+  font-size: 1.125rem;
+  font-weight: 600;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+.c2 {
+  background-color: '#00b4ff';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  color: #fefefe;
+  font-size: 40px;
+  font-weight: 600;
+  height: 2.875rem;
+  line-height: 2.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 2.875rem;
+}
+
+<div>
+  <div
+    className="c0"
+    fontSize="1.125rem"
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "backgroundImage": undefined,
+      }
+    }
+    width="2.875rem"
+  />
+  <div
+    className="c0"
+    fontSize="1.125rem"
+    style={
+      Object {
+        "backgroundColor": "#8151f3",
+        "backgroundImage": undefined,
+      }
+    }
+    width="2.875rem"
+  >
+    t
+  </div>
+  <div
+    className="c0"
+    fontSize="1.125rem"
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "backgroundImage": "url(https://placeholdit.imgix.net/~text?txtsize=33&txt=&w=50&h=50)",
+      }
+    }
+    width="2.875rem"
+  />
+  <div
+    className="c1"
+    fontSize="1.125rem"
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "backgroundImage": undefined,
+      }
+    }
+    width="200px"
+  />
+  <div
+    className="c2"
+    fontSize="40px"
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "backgroundImage": undefined,
+      }
+    }
+    width="2.875rem"
+  />
+</div>
+`;
