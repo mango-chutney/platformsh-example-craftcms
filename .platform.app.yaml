@@ -32,6 +32,7 @@ mounts:
     "/web/cpresources": "shared:files/cpresources"
     # The license file needs to be runtime writeable.
     "/license": "shared:files/license"
+    "/web/resources": "shared:files/resources"
 
 
 # The configuration of app when it is exposed to the web.

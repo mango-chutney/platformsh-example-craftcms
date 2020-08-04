@@ -20,8 +20,10 @@ $settings = [
 
         // Control Panel trigger word
         'cpTrigger' => 'admin',
-        
+
         'useProjectConfigFile' => true,
+
+        'allowUpdates' => false,
     ],
 
     // Dev environment settings
