@@ -1,4 +1,4 @@
-  
+
 {
   "name": "craftcms/craft",
   "description": "Craft CMS",
@@ -22,14 +22,15 @@
   "require": {
     "claviska/simpleimage": "^3.3",
     "craftcms/cms": "3.4.10",
-    "craftcms/contact-form-honeypot": "^1.0",
-    "craftcms/contact-form": "^2.0.2",
+    "craftcms/contact-form-honeypot": "^1.0.2",
+    "craftcms/contact-form": "^2.2.7",
     "craftcms/element-api": "^2.4",
     "craftcms/redactor": "^2.3.3.2",
     "doublesecretagency/craft-cpcss": "^2.2",
     "ether/simplemap": "^3.6.4.3",
     "nystudio107/craft-minify": "^1.2",
     "nystudio107/craft-seomatic": "^3.2",
+    "platformsh/config-reader": "^2.3.1",
     "sebastianlenz/linkfield": "^2.0@beta",
     "setasign/fpdf": "1.8.2",
     "twig/twig": "^2.6.2",
@@ -46,10 +47,7 @@
     }
   },
   "config": {
-    "optimize-autoloader": true,
-    "platform": {
-      "php": "7.0"
-    }
+    "optimize-autoloader": true
   },
   "scripts": {
     "post-create-project-cmd": [
