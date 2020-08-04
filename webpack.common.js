@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './web/assets/'),
-    filename: '[name].[hash].js',
+    filename: '[name].js',
     chunkFilename: '[name].[chunkhash].js',
     publicPath: '/assets/',
   },
@@ -87,7 +87,7 @@ module.exports = {
       ]
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.[hash].css',
+      filename: 'styles.css',
     }),
     new ManifestPlugin({
       basePath: 'assets/',
