@@ -8,6 +8,8 @@
 
 use Platformsh\ConfigReader\Config;
 
+$config = new Config();
+
 if (!$config->isValidPlatform()) {
   if ($config->hasRelationship('database')) {
     $credentials = $config->credentials('database');
