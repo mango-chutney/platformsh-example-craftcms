@@ -6,6 +6,8 @@
  * list of the available settings in vendor/craftcms/cms/src/config/GeneralConfig.php.
  */
 
+use Platformsh\ConfigReader\Config;
+
 $settings = [
     // Global settings
     '*' => [
@@ -48,10 +50,24 @@ $settings = [
     ],
 ];
 
-// Automatic Platform.sh settings.
-$platformsh_config = CRAFT_CONFIG_PATH . '/general.platformsh.php';
-if (file_exists($platformsh_config)) {
-    include $platformsh_config;
+$config = new Config();
+
+if ($config->isValidPlatform()) {
+    $settings['*']['allowAdminChanges'] = false;
+
+    if (empty($settings['*']['securityKey'])) {
+        $settings['*']['securityKey'] = $config->projectEntropy;
+    }
+
+    $routes = $config->routes();
+
+    foreach ($routes as $url => $route) {
+        $host = parse_url($url, PHP_URL_HOST);
+
+        if ($host !== FALSE && $route['type'] == 'upstream' && $route['upstream'] == $config->applicationName) {
+            $settings['*']['siteUrl'] = $host;
+        }
+    }
 }
 
 return $settings;
