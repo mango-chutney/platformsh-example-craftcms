@@ -1,0 +1,48 @@
+$tristicons-font-path:        "../fonts" !default;
+$tristicons-font-size-base:   14px !default;
+$tristicons-line-height-base: 1 !default;
+
+@font-face {
+  font-family: "<%= font_name %>";
+  src: url("#{$tristicons-font-path}/<%= font_name %>.eot");
+  src: url("#{$tristicons-font-path}/<%= font_name %>.eot?#iefix") format("embedded-opentype"),
+  url("#{$tristicons-font-path}/<%= font_name %>.woff") format("woff"),
+  url("#{$tristicons-font-path}/<%= font_name %>.ttf") format("truetype"),
+  url("#{$tristicons-font-path}/<%= font_name %>.svg#<%= font_name %>") format("svg");
+}
+
+@mixin tristicon {
+  display: inline-block;
+  font: normal normal normal #{$tristicons-font-size-base} <%= font_name %>;
+  font-size: inherit;
+  text-rendering: auto;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tristicon {
+  @include tristicon;
+}
+
+.tristicons-spin {
+  animation: tristicons-spin 2s infinite linear;
+}
+
+.tristicons-pulse {
+  animation: tristicons-spin 1s infinite steps(8);
+}
+
+@keyframes tristicons-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+<%= glyphs %>
+<% @glyphs.each do |name, value| %>
+$tristicon-<%= name.to_s %>: "\<%= value[:codepoint].to_s(16) %>";<% end %>

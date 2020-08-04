@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tristicons glyphs preview</title>
+    <style>
+     * {
+       -moz-box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+     }
+
+     body {
+       background: #fff;
+       color: #444;
+       font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+     }
+
+     a,
+     a:visited {
+       color: #888;
+       text-decoration: underline;
+     }
+     a:hover,
+     a:focus { color: #000; }
+
+     header {
+       border-bottom: 2px solid #ddd;
+       margin-bottom: 20px;
+       overflow: hidden;
+       padding: 20px 0;
+     }
+
+     header h1 {
+       color: #888;
+       float: left;
+       font-size: 36px;
+       font-weight: 300;
+     }
+
+     .container {
+       margin: 0 auto;
+       max-width: 1200px;
+       min-width: 960px;
+       padding: 0 40px;
+       width: 90%;
+     }
+
+     .glyph {
+       border-bottom: 1px dotted #ccc;
+       padding: 10px 0 20px;
+       margin-bottom: 20px;
+     }
+
+     .preview-glyphs { vertical-align: bottom; }
+
+     .preview-scale {
+       color: #888;
+       font-size: 12px;
+       margin-top: 5px;
+     }
+
+     .step {
+       display: inline-block;
+       line-height: 1;
+       position: relative;
+       width: 10%;
+     }
+
+     .step .letters,
+     .step i {
+       transition: opacity .3s;
+     }
+
+     .step:hover .letters { opacity: 1; }
+     .step:hover i { opacity: .3; }
+
+     .letters {
+       opacity: .3;
+       position: absolute;
+     }
+
+     .characters-off .letters { display: none; }
+     .characters-off .step:hover i { opacity: 1; }
+
+     
+     .size-12 { font-size: 12px; }
+     
+     .size-14 { font-size: 14px; }
+     
+     .size-16 { font-size: 16px; }
+     
+     .size-18 { font-size: 18px; }
+     
+     .size-21 { font-size: 21px; }
+     
+     .size-24 { font-size: 24px; }
+     
+     .size-36 { font-size: 36px; }
+     
+     .size-48 { font-size: 48px; }
+     
+     .size-60 { font-size: 60px; }
+     
+     .size-72 { font-size: 72px; }
+     
+
+     .usage { margin-top: 10px; }
+
+     .usage input {
+       font-family: monospace;
+       margin-right: 3px;
+       padding: 2px 5px;
+       text-align: center;
+     }
+
+     .usage .point { width: 150px; }
+
+     .usage .class { width: 250px; }
+
+     footer {
+       color: #888;
+       font-size: 12px;
+       padding: 20px 0;
+     }
+
+     /* Icon Font: tristicons */
+
+     @font-face {
+  font-family: "tristicons";
+  src: url("./dist/fonts/tristicons.eot");
+  src: url("./dist/fonts/tristicons.eot?#iefix") format("embedded-opentype"),
+       url("./dist/fonts/tristicons.woff2") format("woff2"),
+       url("./dist/fonts/tristicons.woff") format("woff"),
+       url("./dist/fonts/tristicons.ttf") format("truetype"),
+       url("./dist/fonts/tristicons.svg#tristicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "tristicons";
+    src: url("./dist/fonts/tristicons.svg#tristicons") format("svg");
+  }
+}
+
+     [data-icon]:before { content: attr(data-icon); }
+
+     [data-icon]:before,
+     .tristicon-apple:before,
+.tristicon-briefcase:before,
+.tristicon-briefcase-outline:before,
+.tristicon-bubble:before,
+.tristicon-burger:before,
+.tristicon-calendar:before,
+.tristicon-camera:before,
+.tristicon-camera-solid:before,
+.tristicon-check:before,
+.tristicon-check-alt:before,
+.tristicon-check-circle:before,
+.tristicon-chevron-down:before,
+.tristicon-chevron-down-alt:before,
+.tristicon-chevron-left:before,
+.tristicon-chevron-left-alt:before,
+.tristicon-chevron-right:before,
+.tristicon-chevron-right-alt:before,
+.tristicon-chevron-up:before,
+.tristicon-chevron-up-alt:before,
+.tristicon-circle:before,
+.tristicon-cloud:before,
+.tristicon-coins:before,
+.tristicon-comments:before,
+.tristicon-coupon:before,
+.tristicon-credit-card:before,
+.tristicon-cross:before,
+.tristicon-cross-alt:before,
+.tristicon-cross-circle:before,
+.tristicon-cross-circle-alt:before,
+.tristicon-dollar-dollar:before,
+.tristicon-dollars:before,
+.tristicon-download:before,
+.tristicon-facebook:before,
+.tristicon-facebook-f:before,
+.tristicon-file-outline:before,
+.tristicon-file-solid:before,
+.tristicon-gear:before,
+.tristicon-gear-outline:before,
+.tristicon-gift:before,
+.tristicon-graph:before,
+.tristicon-graph-outline:before,
+.tristicon-heart:before,
+.tristicon-home:before,
+.tristicon-info:before,
+.tristicon-instagram:before,
+.tristicon-juice-outline:before,
+.tristicon-life-saver:before,
+.tristicon-linkedin:before,
+.tristicon-linkedin-in:before,
+.tristicon-loading:before,
+.tristicon-lock:before,
+.tristicon-made-with:before,
+.tristicon-mail:before,
+.tristicon-mango-chutney:before,
+.tristicon-map-marker:before,
+.tristicon-medal:before,
+.tristicon-megaphone-outline:before,
+.tristicon-megaphone-solid:before,
+.tristicon-minus:before,
+.tristicon-notepad:before,
+.tristicon-open:before,
+.tristicon-pen:before,
+.tristicon-phone:before,
+.tristicon-plane:before,
+.tristicon-plus:before,
+.tristicon-radial-bar-outline:before,
+.tristicon-search:before,
+.tristicon-shirt:before,
+.tristicon-shoe:before,
+.tristicon-shopping-cart:before,
+.tristicon-star:before,
+.tristicon-star-alt:before,
+.tristicon-tea-cup:before,
+.tristicon-team:before,
+.tristicon-team-alt:before,
+.tristicon-team-outline:before,
+.tristicon-time:before,
+.tristicon-trash:before,
+.tristicon-trash-alt:before,
+.tristicon-trophy-outline:before,
+.tristicon-twitter:before,
+.tristicon-user:before,
+.tristicon-user-add:before,
+.tristicon-user-outline:before,
+.tristicon-world:before,
+.tristicon-youtube:before {
+         display: inline-block;
+  font-family: "tristicons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+     }
+
+     .tristicon-apple:before { content: "\f100"; }
+.tristicon-briefcase:before { content: "\f101"; }
+.tristicon-briefcase-outline:before { content: "\f102"; }
+.tristicon-bubble:before { content: "\f103"; }
+.tristicon-burger:before { content: "\f104"; }
+.tristicon-calendar:before { content: "\f105"; }
+.tristicon-camera:before { content: "\f106"; }
+.tristicon-camera-solid:before { content: "\f107"; }
+.tristicon-check:before { content: "\f108"; }
+.tristicon-check-alt:before { content: "\f14b"; }
+.tristicon-check-circle:before { content: "\f109"; }
+.tristicon-chevron-down:before { content: "\f10a"; }
+.tristicon-chevron-down-alt:before { content: "\f14f"; }
+.tristicon-chevron-left:before { content: "\f10b"; }
+.tristicon-chevron-left-alt:before { content: "\f150"; }
+.tristicon-chevron-right:before { content: "\f10c"; }
+.tristicon-chevron-right-alt:before { content: "\f151"; }
+.tristicon-chevron-up:before { content: "\f10d"; }
+.tristicon-chevron-up-alt:before { content: "\f152"; }
+.tristicon-circle:before { content: "\f10e"; }
+.tristicon-cloud:before { content: "\f10f"; }
+.tristicon-coins:before { content: "\f110"; }
+.tristicon-comments:before { content: "\f14e"; }
+.tristicon-coupon:before { content: "\f111"; }
+.tristicon-credit-card:before { content: "\f112"; }
+.tristicon-cross:before { content: "\f113"; }
+.tristicon-cross-alt:before { content: "\f114"; }
+.tristicon-cross-circle:before { content: "\f115"; }
+.tristicon-cross-circle-alt:before { content: "\f116"; }
+.tristicon-dollar-dollar:before { content: "\f117"; }
+.tristicon-dollars:before { content: "\f118"; }
+.tristicon-download:before { content: "\f119"; }
+.tristicon-facebook:before { content: "\f11a"; }
+.tristicon-facebook-f:before { content: "\f14c"; }
+.tristicon-file-outline:before { content: "\f11b"; }
+.tristicon-file-solid:before { content: "\f11c"; }
+.tristicon-gear:before { content: "\f11d"; }
+.tristicon-gear-outline:before { content: "\f11e"; }
+.tristicon-gift:before { content: "\f153"; }
+.tristicon-graph:before { content: "\f11f"; }
+.tristicon-graph-outline:before { content: "\f120"; }
+.tristicon-heart:before { content: "\f121"; }
+.tristicon-home:before { content: "\f122"; }
+.tristicon-info:before { content: "\f123"; }
+.tristicon-instagram:before { content: "\f124"; }
+.tristicon-juice-outline:before { content: "\f125"; }
+.tristicon-life-saver:before { content: "\f126"; }
+.tristicon-linkedin:before { content: "\f127"; }
+.tristicon-linkedin-in:before { content: "\f155"; }
+.tristicon-loading:before { content: "\f128"; }
+.tristicon-lock:before { content: "\f129"; }
+.tristicon-made-with:before { content: "\f12a"; }
+.tristicon-mail:before { content: "\f12b"; }
+.tristicon-mango-chutney:before { content: "\f12c"; }
+.tristicon-map-marker:before { content: "\f154"; }
+.tristicon-medal:before { content: "\f12d"; }
+.tristicon-megaphone-outline:before { content: "\f12e"; }
+.tristicon-megaphone-solid:before { content: "\f12f"; }
+.tristicon-minus:before { content: "\f130"; }
+.tristicon-notepad:before { content: "\f131"; }
+.tristicon-open:before { content: "\f132"; }
+.tristicon-pen:before { content: "\f133"; }
+.tristicon-phone:before { content: "\f134"; }
+.tristicon-plane:before { content: "\f135"; }
+.tristicon-plus:before { content: "\f136"; }
+.tristicon-radial-bar-outline:before { content: "\f137"; }
+.tristicon-search:before { content: "\f14d"; }
+.tristicon-shirt:before { content: "\f138"; }
+.tristicon-shoe:before { content: "\f139"; }
+.tristicon-shopping-cart:before { content: "\f13a"; }
+.tristicon-star:before { content: "\f13b"; }
+.tristicon-star-alt:before { content: "\f13c"; }
+.tristicon-tea-cup:before { content: "\f13d"; }
+.tristicon-team:before { content: "\f13e"; }
+.tristicon-team-alt:before { content: "\f13f"; }
+.tristicon-team-outline:before { content: "\f140"; }
+.tristicon-time:before { content: "\f141"; }
+.tristicon-trash:before { content: "\f142"; }
+.tristicon-trash-alt:before { content: "\f143"; }
+.tristicon-trophy-outline:before { content: "\f144"; }
+.tristicon-twitter:before { content: "\f145"; }
+.tristicon-user:before { content: "\f146"; }
+.tristicon-user-add:before { content: "\f147"; }
+.tristicon-user-outline:before { content: "\f148"; }
+.tristicon-world:before { content: "\f149"; }
+.tristicon-youtube:before { content: "\f14a"; }
+    </style>
+  </head>
+
+  <body class="characters-off">
+    <div id="page" class="container">
+      <header>
+        <h1>tristicons contains 86 glyphs:</h1>
+      </header>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-14"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-16"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-18"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-21"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-24"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-36"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-48"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-60"><i id="tristicon-apple" class="tristicon-apple"></i></span><span class="step size-72"><i id="tristicon-apple" class="tristicon-apple"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-apple" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf100;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-14"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-16"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-18"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-21"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-24"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-36"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-48"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-60"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span><span class="step size-72"><i id="tristicon-briefcase" class="tristicon-briefcase"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-briefcase" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf101;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-14"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-16"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-18"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-21"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-24"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-36"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-48"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-60"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span><span class="step size-72"><i id="tristicon-briefcase-outline" class="tristicon-briefcase-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-briefcase-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf102;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-14"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-16"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-18"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-21"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-24"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-36"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-48"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-60"><i id="tristicon-bubble" class="tristicon-bubble"></i></span><span class="step size-72"><i id="tristicon-bubble" class="tristicon-bubble"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-bubble" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf103;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-14"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-16"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-18"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-21"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-24"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-36"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-48"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-60"><i id="tristicon-burger" class="tristicon-burger"></i></span><span class="step size-72"><i id="tristicon-burger" class="tristicon-burger"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-burger" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf104;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-14"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-16"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-18"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-21"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-24"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-36"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-48"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-60"><i id="tristicon-calendar" class="tristicon-calendar"></i></span><span class="step size-72"><i id="tristicon-calendar" class="tristicon-calendar"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-calendar" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf105;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-14"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-16"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-18"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-21"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-24"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-36"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-48"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-60"><i id="tristicon-camera" class="tristicon-camera"></i></span><span class="step size-72"><i id="tristicon-camera" class="tristicon-camera"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-camera" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf106;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-14"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-16"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-18"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-21"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-24"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-36"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-48"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-60"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span><span class="step size-72"><i id="tristicon-camera-solid" class="tristicon-camera-solid"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-camera-solid" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf107;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-14"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-16"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-18"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-21"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-24"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-36"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-48"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-60"><i id="tristicon-check" class="tristicon-check"></i></span><span class="step size-72"><i id="tristicon-check" class="tristicon-check"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-check" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf108;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-14"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-16"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-18"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-21"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-24"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-36"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-48"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-60"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span><span class="step size-72"><i id="tristicon-check-alt" class="tristicon-check-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-check-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf14b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-14"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-16"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-18"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-21"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-24"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-36"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-48"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-60"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span><span class="step size-72"><i id="tristicon-check-circle" class="tristicon-check-circle"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-check-circle" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf109;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-14"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-16"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-18"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-21"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-24"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-36"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-48"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-60"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span><span class="step size-72"><i id="tristicon-chevron-down" class="tristicon-chevron-down"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-down" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10a;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-14"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-16"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-18"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-21"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-24"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-36"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-48"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-60"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span><span class="step size-72"><i id="tristicon-chevron-down-alt" class="tristicon-chevron-down-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-down-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf14f;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-14"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-16"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-18"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-21"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-24"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-36"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-48"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-60"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span><span class="step size-72"><i id="tristicon-chevron-left" class="tristicon-chevron-left"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-left" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-14"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-16"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-18"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-21"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-24"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-36"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-48"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-60"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span><span class="step size-72"><i id="tristicon-chevron-left-alt" class="tristicon-chevron-left-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-left-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf150;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-14"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-16"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-18"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-21"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-24"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-36"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-48"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-60"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span><span class="step size-72"><i id="tristicon-chevron-right" class="tristicon-chevron-right"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-right" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-14"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-16"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-18"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-21"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-24"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-36"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-48"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-60"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span><span class="step size-72"><i id="tristicon-chevron-right-alt" class="tristicon-chevron-right-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-right-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf151;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-14"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-16"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-18"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-21"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-24"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-36"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-48"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-60"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span><span class="step size-72"><i id="tristicon-chevron-up" class="tristicon-chevron-up"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-up" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-14"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-16"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-18"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-21"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-24"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-36"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-48"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-60"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span><span class="step size-72"><i id="tristicon-chevron-up-alt" class="tristicon-chevron-up-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-chevron-up-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf152;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-14"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-16"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-18"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-21"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-24"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-36"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-48"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-60"><i id="tristicon-circle" class="tristicon-circle"></i></span><span class="step size-72"><i id="tristicon-circle" class="tristicon-circle"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-circle" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-14"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-16"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-18"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-21"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-24"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-36"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-48"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-60"><i id="tristicon-cloud" class="tristicon-cloud"></i></span><span class="step size-72"><i id="tristicon-cloud" class="tristicon-cloud"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-cloud" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10f;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-14"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-16"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-18"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-21"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-24"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-36"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-48"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-60"><i id="tristicon-coins" class="tristicon-coins"></i></span><span class="step size-72"><i id="tristicon-coins" class="tristicon-coins"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-coins" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf110;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-14"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-16"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-18"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-21"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-24"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-36"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-48"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-60"><i id="tristicon-comments" class="tristicon-comments"></i></span><span class="step size-72"><i id="tristicon-comments" class="tristicon-comments"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-comments" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf14e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-14"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-16"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-18"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-21"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-24"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-36"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-48"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-60"><i id="tristicon-coupon" class="tristicon-coupon"></i></span><span class="step size-72"><i id="tristicon-coupon" class="tristicon-coupon"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-coupon" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf111;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-14"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-16"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-18"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-21"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-24"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-36"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-48"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-60"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span><span class="step size-72"><i id="tristicon-credit-card" class="tristicon-credit-card"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-credit-card" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf112;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-14"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-16"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-18"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-21"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-24"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-36"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-48"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-60"><i id="tristicon-cross" class="tristicon-cross"></i></span><span class="step size-72"><i id="tristicon-cross" class="tristicon-cross"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-cross" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf113;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-14"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-16"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-18"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-21"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-24"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-36"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-48"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-60"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span><span class="step size-72"><i id="tristicon-cross-alt" class="tristicon-cross-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-cross-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf114;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-14"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-16"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-18"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-21"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-24"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-36"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-48"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-60"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span><span class="step size-72"><i id="tristicon-cross-circle" class="tristicon-cross-circle"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-cross-circle" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf115;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-14"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-16"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-18"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-21"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-24"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-36"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-48"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-60"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span><span class="step size-72"><i id="tristicon-cross-circle-alt" class="tristicon-cross-circle-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-cross-circle-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf116;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-14"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-16"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-18"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-21"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-24"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-36"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-48"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-60"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span><span class="step size-72"><i id="tristicon-dollar-dollar" class="tristicon-dollar-dollar"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-dollar-dollar" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf117;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-14"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-16"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-18"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-21"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-24"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-36"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-48"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-60"><i id="tristicon-dollars" class="tristicon-dollars"></i></span><span class="step size-72"><i id="tristicon-dollars" class="tristicon-dollars"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-dollars" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf118;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-14"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-16"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-18"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-21"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-24"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-36"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-48"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-60"><i id="tristicon-download" class="tristicon-download"></i></span><span class="step size-72"><i id="tristicon-download" class="tristicon-download"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-download" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf119;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-14"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-16"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-18"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-21"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-24"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-36"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-48"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-60"><i id="tristicon-facebook" class="tristicon-facebook"></i></span><span class="step size-72"><i id="tristicon-facebook" class="tristicon-facebook"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-facebook" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11a;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-14"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-16"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-18"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-21"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-24"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-36"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-48"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-60"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span><span class="step size-72"><i id="tristicon-facebook-f" class="tristicon-facebook-f"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-facebook-f" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf14c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-14"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-16"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-18"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-21"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-24"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-36"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-48"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-60"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span><span class="step size-72"><i id="tristicon-file-outline" class="tristicon-file-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-file-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-14"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-16"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-18"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-21"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-24"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-36"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-48"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-60"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span><span class="step size-72"><i id="tristicon-file-solid" class="tristicon-file-solid"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-file-solid" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-14"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-16"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-18"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-21"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-24"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-36"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-48"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-60"><i id="tristicon-gear" class="tristicon-gear"></i></span><span class="step size-72"><i id="tristicon-gear" class="tristicon-gear"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-gear" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-14"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-16"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-18"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-21"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-24"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-36"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-48"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-60"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span><span class="step size-72"><i id="tristicon-gear-outline" class="tristicon-gear-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-gear-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-14"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-16"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-18"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-21"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-24"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-36"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-48"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-60"><i id="tristicon-gift" class="tristicon-gift"></i></span><span class="step size-72"><i id="tristicon-gift" class="tristicon-gift"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-gift" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf153;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-14"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-16"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-18"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-21"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-24"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-36"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-48"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-60"><i id="tristicon-graph" class="tristicon-graph"></i></span><span class="step size-72"><i id="tristicon-graph" class="tristicon-graph"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-graph" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11f;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-14"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-16"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-18"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-21"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-24"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-36"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-48"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-60"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span><span class="step size-72"><i id="tristicon-graph-outline" class="tristicon-graph-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-graph-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf120;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-14"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-16"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-18"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-21"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-24"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-36"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-48"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-60"><i id="tristicon-heart" class="tristicon-heart"></i></span><span class="step size-72"><i id="tristicon-heart" class="tristicon-heart"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-heart" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf121;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-14"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-16"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-18"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-21"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-24"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-36"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-48"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-60"><i id="tristicon-home" class="tristicon-home"></i></span><span class="step size-72"><i id="tristicon-home" class="tristicon-home"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-home" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf122;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-14"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-16"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-18"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-21"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-24"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-36"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-48"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-60"><i id="tristicon-info" class="tristicon-info"></i></span><span class="step size-72"><i id="tristicon-info" class="tristicon-info"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-info" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf123;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-14"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-16"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-18"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-21"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-24"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-36"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-48"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-60"><i id="tristicon-instagram" class="tristicon-instagram"></i></span><span class="step size-72"><i id="tristicon-instagram" class="tristicon-instagram"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-instagram" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf124;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-14"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-16"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-18"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-21"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-24"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-36"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-48"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-60"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span><span class="step size-72"><i id="tristicon-juice-outline" class="tristicon-juice-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-juice-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf125;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-14"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-16"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-18"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-21"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-24"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-36"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-48"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-60"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span><span class="step size-72"><i id="tristicon-life-saver" class="tristicon-life-saver"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-life-saver" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf126;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-14"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-16"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-18"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-21"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-24"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-36"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-48"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-60"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span><span class="step size-72"><i id="tristicon-linkedin" class="tristicon-linkedin"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-linkedin" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf127;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-14"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-16"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-18"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-21"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-24"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-36"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-48"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-60"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span><span class="step size-72"><i id="tristicon-linkedin-in" class="tristicon-linkedin-in"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-linkedin-in" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf155;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-14"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-16"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-18"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-21"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-24"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-36"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-48"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-60"><i id="tristicon-loading" class="tristicon-loading"></i></span><span class="step size-72"><i id="tristicon-loading" class="tristicon-loading"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-loading" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf128;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-14"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-16"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-18"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-21"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-24"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-36"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-48"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-60"><i id="tristicon-lock" class="tristicon-lock"></i></span><span class="step size-72"><i id="tristicon-lock" class="tristicon-lock"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-lock" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf129;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-14"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-16"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-18"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-21"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-24"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-36"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-48"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-60"><i id="tristicon-made-with" class="tristicon-made-with"></i></span><span class="step size-72"><i id="tristicon-made-with" class="tristicon-made-with"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-made-with" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf12a;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-14"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-16"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-18"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-21"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-24"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-36"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-48"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-60"><i id="tristicon-mail" class="tristicon-mail"></i></span><span class="step size-72"><i id="tristicon-mail" class="tristicon-mail"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-mail" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf12b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-14"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-16"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-18"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-21"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-24"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-36"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-48"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-60"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span><span class="step size-72"><i id="tristicon-mango-chutney" class="tristicon-mango-chutney"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-mango-chutney" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf12c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-14"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-16"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-18"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-21"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-24"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-36"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-48"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-60"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span><span class="step size-72"><i id="tristicon-map-marker" class="tristicon-map-marker"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-map-marker" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf154;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-14"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-16"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-18"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-21"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-24"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-36"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-48"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-60"><i id="tristicon-medal" class="tristicon-medal"></i></span><span class="step size-72"><i id="tristicon-medal" class="tristicon-medal"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-medal" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf12d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-14"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-16"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-18"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-21"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-24"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-36"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-48"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-60"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span><span class="step size-72"><i id="tristicon-megaphone-outline" class="tristicon-megaphone-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-megaphone-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf12e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-14"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-16"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-18"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-21"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-24"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-36"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-48"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-60"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span><span class="step size-72"><i id="tristicon-megaphone-solid" class="tristicon-megaphone-solid"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-megaphone-solid" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf12f;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-14"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-16"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-18"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-21"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-24"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-36"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-48"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-60"><i id="tristicon-minus" class="tristicon-minus"></i></span><span class="step size-72"><i id="tristicon-minus" class="tristicon-minus"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-minus" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf130;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-14"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-16"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-18"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-21"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-24"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-36"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-48"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-60"><i id="tristicon-notepad" class="tristicon-notepad"></i></span><span class="step size-72"><i id="tristicon-notepad" class="tristicon-notepad"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-notepad" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf131;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-14"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-16"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-18"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-21"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-24"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-36"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-48"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-60"><i id="tristicon-open" class="tristicon-open"></i></span><span class="step size-72"><i id="tristicon-open" class="tristicon-open"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-open" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf132;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-14"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-16"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-18"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-21"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-24"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-36"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-48"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-60"><i id="tristicon-pen" class="tristicon-pen"></i></span><span class="step size-72"><i id="tristicon-pen" class="tristicon-pen"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-pen" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf133;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-14"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-16"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-18"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-21"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-24"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-36"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-48"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-60"><i id="tristicon-phone" class="tristicon-phone"></i></span><span class="step size-72"><i id="tristicon-phone" class="tristicon-phone"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-phone" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf134;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-14"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-16"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-18"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-21"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-24"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-36"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-48"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-60"><i id="tristicon-plane" class="tristicon-plane"></i></span><span class="step size-72"><i id="tristicon-plane" class="tristicon-plane"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-plane" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf135;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-14"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-16"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-18"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-21"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-24"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-36"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-48"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-60"><i id="tristicon-plus" class="tristicon-plus"></i></span><span class="step size-72"><i id="tristicon-plus" class="tristicon-plus"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-plus" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf136;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-14"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-16"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-18"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-21"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-24"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-36"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-48"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-60"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span><span class="step size-72"><i id="tristicon-radial-bar-outline" class="tristicon-radial-bar-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-radial-bar-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf137;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-14"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-16"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-18"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-21"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-24"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-36"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-48"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-60"><i id="tristicon-search" class="tristicon-search"></i></span><span class="step size-72"><i id="tristicon-search" class="tristicon-search"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-search" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf14d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-14"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-16"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-18"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-21"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-24"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-36"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-48"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-60"><i id="tristicon-shirt" class="tristicon-shirt"></i></span><span class="step size-72"><i id="tristicon-shirt" class="tristicon-shirt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-shirt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf138;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-14"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-16"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-18"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-21"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-24"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-36"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-48"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-60"><i id="tristicon-shoe" class="tristicon-shoe"></i></span><span class="step size-72"><i id="tristicon-shoe" class="tristicon-shoe"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-shoe" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf139;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-14"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-16"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-18"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-21"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-24"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-36"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-48"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-60"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span><span class="step size-72"><i id="tristicon-shopping-cart" class="tristicon-shopping-cart"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-shopping-cart" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf13a;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-14"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-16"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-18"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-21"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-24"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-36"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-48"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-60"><i id="tristicon-star" class="tristicon-star"></i></span><span class="step size-72"><i id="tristicon-star" class="tristicon-star"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-star" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf13b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-14"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-16"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-18"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-21"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-24"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-36"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-48"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-60"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span><span class="step size-72"><i id="tristicon-star-alt" class="tristicon-star-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-star-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf13c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-14"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-16"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-18"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-21"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-24"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-36"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-48"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-60"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span><span class="step size-72"><i id="tristicon-tea-cup" class="tristicon-tea-cup"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-tea-cup" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf13d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-14"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-16"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-18"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-21"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-24"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-36"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-48"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-60"><i id="tristicon-team" class="tristicon-team"></i></span><span class="step size-72"><i id="tristicon-team" class="tristicon-team"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-team" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf13e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-14"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-16"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-18"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-21"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-24"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-36"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-48"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-60"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span><span class="step size-72"><i id="tristicon-team-alt" class="tristicon-team-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-team-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf13f;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-14"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-16"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-18"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-21"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-24"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-36"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-48"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-60"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span><span class="step size-72"><i id="tristicon-team-outline" class="tristicon-team-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-team-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf140;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-14"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-16"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-18"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-21"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-24"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-36"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-48"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-60"><i id="tristicon-time" class="tristicon-time"></i></span><span class="step size-72"><i id="tristicon-time" class="tristicon-time"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-time" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf141;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-14"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-16"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-18"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-21"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-24"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-36"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-48"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-60"><i id="tristicon-trash" class="tristicon-trash"></i></span><span class="step size-72"><i id="tristicon-trash" class="tristicon-trash"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-trash" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf142;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-14"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-16"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-18"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-21"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-24"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-36"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-48"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-60"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span><span class="step size-72"><i id="tristicon-trash-alt" class="tristicon-trash-alt"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-trash-alt" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf143;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-14"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-16"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-18"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-21"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-24"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-36"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-48"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-60"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span><span class="step size-72"><i id="tristicon-trophy-outline" class="tristicon-trophy-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-trophy-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf144;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-14"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-16"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-18"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-21"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-24"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-36"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-48"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-60"><i id="tristicon-twitter" class="tristicon-twitter"></i></span><span class="step size-72"><i id="tristicon-twitter" class="tristicon-twitter"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-twitter" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf145;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-14"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-16"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-18"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-21"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-24"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-36"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-48"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-60"><i id="tristicon-user" class="tristicon-user"></i></span><span class="step size-72"><i id="tristicon-user" class="tristicon-user"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-user" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf146;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-14"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-16"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-18"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-21"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-24"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-36"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-48"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-60"><i id="tristicon-user-add" class="tristicon-user-add"></i></span><span class="step size-72"><i id="tristicon-user-add" class="tristicon-user-add"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-user-add" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf147;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-14"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-16"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-18"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-21"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-24"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-36"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-48"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-60"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span><span class="step size-72"><i id="tristicon-user-outline" class="tristicon-user-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-user-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf148;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-14"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-16"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-18"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-21"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-24"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-36"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-48"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-60"><i id="tristicon-world" class="tristicon-world"></i></span><span class="step size-72"><i id="tristicon-world" class="tristicon-world"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-world" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf149;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-14"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-16"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-18"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-21"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-24"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-36"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-48"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-60"><i id="tristicon-youtube" class="tristicon-youtube"></i></span><span class="step size-72"><i id="tristicon-youtube" class="tristicon-youtube"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".tristicon-youtube" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf14a;" />
+        </div>
+      </div>
+      
+      <footer>
+        Made with love using <a href="http://fontcustom.com">Font Custom</a>.
+      </footer>
+    </div>
+  </body>
+</html>

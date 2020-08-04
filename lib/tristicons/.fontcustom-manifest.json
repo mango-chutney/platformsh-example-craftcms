@@ -1,0 +1,403 @@
+{
+  "checksum": {
+    "previous":
+      "842a7c3296d98faae0000ff35d272f3546a3057eb720fd51ebda9538eae3e0b8",
+    "current":
+      "842a7c3296d98faae0000ff35d272f3546a3057eb720fd51ebda9538eae3e0b8"
+  },
+  "fonts": [
+    "dist/fonts/tristicons.ttf",
+    "dist/fonts/tristicons.svg",
+    "dist/fonts/tristicons.woff",
+    "dist/fonts/tristicons.eot",
+    "dist/fonts/tristicons.woff2"
+  ],
+  "glyphs": {
+    "apple": {
+      "codepoint": 61696,
+      "source": "vectors/apple.svg"
+    },
+    "briefcase": {
+      "codepoint": 61697,
+      "source": "vectors/briefcase.svg"
+    },
+    "briefcase-outline": {
+      "codepoint": 61698,
+      "source": "vectors/briefcase-outline.svg"
+    },
+    "bubble": {
+      "codepoint": 61699,
+      "source": "vectors/bubble.svg"
+    },
+    "burger": {
+      "codepoint": 61700,
+      "source": "vectors/burger.svg"
+    },
+    "calendar": {
+      "codepoint": 61701,
+      "source": "vectors/calendar.svg"
+    },
+    "camera": {
+      "codepoint": 61702,
+      "source": "vectors/camera.svg"
+    },
+    "camera-solid": {
+      "codepoint": 61703,
+      "source": "vectors/camera-solid.svg"
+    },
+    "check": {
+      "codepoint": 61704,
+      "source": "vectors/check.svg"
+    },
+    "check-alt": {
+      "codepoint": 61771,
+      "source": "vectors/check-alt.svg"
+    },
+    "check-circle": {
+      "codepoint": 61705,
+      "source": "vectors/check-circle.svg"
+    },
+    "chevron-down": {
+      "codepoint": 61706,
+      "source": "vectors/chevron-down.svg"
+    },
+    "chevron-down-alt": {
+      "codepoint": 61775,
+      "source": "vectors/chevron-down-alt.svg"
+    },
+    "chevron-left": {
+      "codepoint": 61707,
+      "source": "vectors/chevron-left.svg"
+    },
+    "chevron-left-alt": {
+      "codepoint": 61776,
+      "source": "vectors/chevron-left-alt.svg"
+    },
+    "chevron-right": {
+      "codepoint": 61708,
+      "source": "vectors/chevron-right.svg"
+    },
+    "chevron-right-alt": {
+      "codepoint": 61777,
+      "source": "vectors/chevron-right-alt.svg"
+    },
+    "chevron-up": {
+      "codepoint": 61709,
+      "source": "vectors/chevron-up.svg"
+    },
+    "chevron-up-alt": {
+      "codepoint": 61778,
+      "source": "vectors/chevron-up-alt.svg"
+    },
+    "circle": {
+      "codepoint": 61710,
+      "source": "vectors/circle.svg"
+    },
+    "cloud": {
+      "codepoint": 61711,
+      "source": "vectors/cloud.svg"
+    },
+    "coins": {
+      "codepoint": 61712,
+      "source": "vectors/coins.svg"
+    },
+    "comments": {
+      "codepoint": 61774,
+      "source": "vectors/comments.svg"
+    },
+    "coupon": {
+      "codepoint": 61713,
+      "source": "vectors/coupon.svg"
+    },
+    "credit-card": {
+      "codepoint": 61714,
+      "source": "vectors/credit-card.svg"
+    },
+    "cross": {
+      "codepoint": 61715,
+      "source": "vectors/cross.svg"
+    },
+    "cross-alt": {
+      "codepoint": 61716,
+      "source": "vectors/cross-alt.svg"
+    },
+    "cross-circle": {
+      "codepoint": 61717,
+      "source": "vectors/cross-circle.svg"
+    },
+    "cross-circle-alt": {
+      "codepoint": 61718,
+      "source": "vectors/cross-circle-alt.svg"
+    },
+    "dollar-dollar": {
+      "codepoint": 61719,
+      "source": "vectors/dollar-dollar.svg"
+    },
+    "dollars": {
+      "codepoint": 61720,
+      "source": "vectors/dollars.svg"
+    },
+    "download": {
+      "codepoint": 61721,
+      "source": "vectors/download.svg"
+    },
+    "facebook": {
+      "codepoint": 61722,
+      "source": "vectors/facebook.svg"
+    },
+    "facebook-f": {
+      "codepoint": 61772,
+      "source": "vectors/facebook-f.svg"
+    },
+    "file-outline": {
+      "codepoint": 61723,
+      "source": "vectors/file-outline.svg"
+    },
+    "file-solid": {
+      "codepoint": 61724,
+      "source": "vectors/file-solid.svg"
+    },
+    "gear": {
+      "codepoint": 61725,
+      "source": "vectors/gear.svg"
+    },
+    "gear-outline": {
+      "codepoint": 61726,
+      "source": "vectors/gear-outline.svg"
+    },
+    "gift": {
+      "codepoint": 61779,
+      "source": "vectors/gift.svg"
+    },
+    "graph": {
+      "codepoint": 61727,
+      "source": "vectors/graph.svg"
+    },
+    "graph-outline": {
+      "codepoint": 61728,
+      "source": "vectors/graph-outline.svg"
+    },
+    "heart": {
+      "codepoint": 61729,
+      "source": "vectors/heart.svg"
+    },
+    "home": {
+      "codepoint": 61730,
+      "source": "vectors/home.svg"
+    },
+    "info": {
+      "codepoint": 61731,
+      "source": "vectors/info.svg"
+    },
+    "instagram": {
+      "codepoint": 61732,
+      "source": "vectors/instagram.svg"
+    },
+    "juice-outline": {
+      "codepoint": 61733,
+      "source": "vectors/juice-outline.svg"
+    },
+    "life-saver": {
+      "codepoint": 61734,
+      "source": "vectors/life-saver.svg"
+    },
+    "linkedin": {
+      "codepoint": 61735,
+      "source": "vectors/linkedin.svg"
+    },
+    "linkedin-in": {
+      "codepoint": 61781,
+      "source": "vectors/linkedin-in.svg"
+    },
+    "loading": {
+      "codepoint": 61736,
+      "source": "vectors/loading.svg"
+    },
+    "lock": {
+      "codepoint": 61737,
+      "source": "vectors/lock.svg"
+    },
+    "made-with": {
+      "codepoint": 61738,
+      "source": "vectors/made-with.svg"
+    },
+    "mail": {
+      "codepoint": 61739,
+      "source": "vectors/mail.svg"
+    },
+    "mango-chutney": {
+      "codepoint": 61740,
+      "source": "vectors/mango-chutney.svg"
+    },
+    "map-marker": {
+      "codepoint": 61780,
+      "source": "vectors/map-marker.svg"
+    },
+    "medal": {
+      "codepoint": 61741,
+      "source": "vectors/medal.svg"
+    },
+    "megaphone-outline": {
+      "codepoint": 61742,
+      "source": "vectors/megaphone-outline.svg"
+    },
+    "megaphone-solid": {
+      "codepoint": 61743,
+      "source": "vectors/megaphone-solid.svg"
+    },
+    "minus": {
+      "codepoint": 61744,
+      "source": "vectors/minus.svg"
+    },
+    "notepad": {
+      "codepoint": 61745,
+      "source": "vectors/notepad.svg"
+    },
+    "open": {
+      "codepoint": 61746,
+      "source": "vectors/open.svg"
+    },
+    "pen": {
+      "codepoint": 61747,
+      "source": "vectors/pen.svg"
+    },
+    "phone": {
+      "codepoint": 61748,
+      "source": "vectors/phone.svg"
+    },
+    "plane": {
+      "codepoint": 61749,
+      "source": "vectors/plane.svg"
+    },
+    "plus": {
+      "codepoint": 61750,
+      "source": "vectors/plus.svg"
+    },
+    "radial-bar-outline": {
+      "codepoint": 61751,
+      "source": "vectors/radial-bar-outline.svg"
+    },
+    "search": {
+      "codepoint": 61773,
+      "source": "vectors/search.svg"
+    },
+    "shirt": {
+      "codepoint": 61752,
+      "source": "vectors/shirt.svg"
+    },
+    "shoe": {
+      "codepoint": 61753,
+      "source": "vectors/shoe.svg"
+    },
+    "shopping-cart": {
+      "codepoint": 61754,
+      "source": "vectors/shopping-cart.svg"
+    },
+    "star": {
+      "codepoint": 61755,
+      "source": "vectors/star.svg"
+    },
+    "star-alt": {
+      "codepoint": 61756,
+      "source": "vectors/star-alt.svg"
+    },
+    "tea-cup": {
+      "codepoint": 61757,
+      "source": "vectors/tea-cup.svg"
+    },
+    "team": {
+      "codepoint": 61758,
+      "source": "vectors/team.svg"
+    },
+    "team-alt": {
+      "codepoint": 61759,
+      "source": "vectors/team-alt.svg"
+    },
+    "team-outline": {
+      "codepoint": 61760,
+      "source": "vectors/team-outline.svg"
+    },
+    "time": {
+      "codepoint": 61761,
+      "source": "vectors/time.svg"
+    },
+    "trash": {
+      "codepoint": 61762,
+      "source": "vectors/trash.svg"
+    },
+    "trash-alt": {
+      "codepoint": 61763,
+      "source": "vectors/trash-alt.svg"
+    },
+    "trophy-outline": {
+      "codepoint": 61764,
+      "source": "vectors/trophy-outline.svg"
+    },
+    "twitter": {
+      "codepoint": 61765,
+      "source": "vectors/twitter.svg"
+    },
+    "user": {
+      "codepoint": 61766,
+      "source": "vectors/user.svg"
+    },
+    "user-add": {
+      "codepoint": 61767,
+      "source": "vectors/user-add.svg"
+    },
+    "user-outline": {
+      "codepoint": 61768,
+      "source": "vectors/user-outline.svg"
+    },
+    "world": {
+      "codepoint": 61769,
+      "source": "vectors/world.svg"
+    },
+    "youtube": {
+      "codepoint": 61770,
+      "source": "vectors/youtube.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "copyright": "",
+    "css3": false,
+    "css_selector": ".tristicon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "tristicons",
+    "force": true,
+    "input": {
+      "templates": "templates",
+      "vectors": "vectors"
+    },
+    "no_hash": true,
+    "output": {
+      "_tristicons.scss": "dist/scss",
+      "css": "dist/fonts",
+      "fonts": "dist/fonts",
+      "icons.json": "dist/json",
+      "index.html": ".",
+      "preview": "dist/fonts",
+      "tristicons.css": "dist/css"
+    },
+    "preprocessor_path": "./dist/fonts",
+    "quiet": false,
+    "templates": [
+      "index.html",
+      "_tristicons.scss",
+      "tristicons.css",
+      "icons.json"
+    ]
+  },
+  "templates": [
+    "./index.html",
+    "dist/scss/_tristicons.scss",
+    "dist/css/tristicons.css",
+    "dist/json/icons.json"
+  ]
+}

@@ -1,0 +1,218 @@
+$tristicons-font-path:        "../fonts" !default;
+$tristicons-font-size-base:   14px !default;
+$tristicons-line-height-base: 1 !default;
+
+@font-face {
+  font-family: "tristicons";
+  src: url("#{$tristicons-font-path}/tristicons.eot");
+  src: url("#{$tristicons-font-path}/tristicons.eot?#iefix") format("embedded-opentype"),
+  url("#{$tristicons-font-path}/tristicons.woff") format("woff"),
+  url("#{$tristicons-font-path}/tristicons.ttf") format("truetype"),
+  url("#{$tristicons-font-path}/tristicons.svg#tristicons") format("svg");
+}
+
+@mixin tristicon {
+  display: inline-block;
+  font: normal normal normal #{$tristicons-font-size-base} tristicons;
+  font-size: inherit;
+  text-rendering: auto;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tristicon {
+  @include tristicon;
+}
+
+.tristicons-spin {
+  animation: tristicons-spin 2s infinite linear;
+}
+
+.tristicons-pulse {
+  animation: tristicons-spin 1s infinite steps(8);
+}
+
+@keyframes tristicons-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.tristicon-apple:before { content: "\f100"; }
+.tristicon-briefcase:before { content: "\f101"; }
+.tristicon-briefcase-outline:before { content: "\f102"; }
+.tristicon-bubble:before { content: "\f103"; }
+.tristicon-burger:before { content: "\f104"; }
+.tristicon-calendar:before { content: "\f105"; }
+.tristicon-camera:before { content: "\f106"; }
+.tristicon-camera-solid:before { content: "\f107"; }
+.tristicon-check:before { content: "\f108"; }
+.tristicon-check-alt:before { content: "\f14b"; }
+.tristicon-check-circle:before { content: "\f109"; }
+.tristicon-chevron-down:before { content: "\f10a"; }
+.tristicon-chevron-down-alt:before { content: "\f14f"; }
+.tristicon-chevron-left:before { content: "\f10b"; }
+.tristicon-chevron-left-alt:before { content: "\f150"; }
+.tristicon-chevron-right:before { content: "\f10c"; }
+.tristicon-chevron-right-alt:before { content: "\f151"; }
+.tristicon-chevron-up:before { content: "\f10d"; }
+.tristicon-chevron-up-alt:before { content: "\f152"; }
+.tristicon-circle:before { content: "\f10e"; }
+.tristicon-cloud:before { content: "\f10f"; }
+.tristicon-coins:before { content: "\f110"; }
+.tristicon-comments:before { content: "\f14e"; }
+.tristicon-coupon:before { content: "\f111"; }
+.tristicon-credit-card:before { content: "\f112"; }
+.tristicon-cross:before { content: "\f113"; }
+.tristicon-cross-alt:before { content: "\f114"; }
+.tristicon-cross-circle:before { content: "\f115"; }
+.tristicon-cross-circle-alt:before { content: "\f116"; }
+.tristicon-dollar-dollar:before { content: "\f117"; }
+.tristicon-dollars:before { content: "\f118"; }
+.tristicon-download:before { content: "\f119"; }
+.tristicon-facebook:before { content: "\f11a"; }
+.tristicon-facebook-f:before { content: "\f14c"; }
+.tristicon-file-outline:before { content: "\f11b"; }
+.tristicon-file-solid:before { content: "\f11c"; }
+.tristicon-gear:before { content: "\f11d"; }
+.tristicon-gear-outline:before { content: "\f11e"; }
+.tristicon-gift:before { content: "\f153"; }
+.tristicon-graph:before { content: "\f11f"; }
+.tristicon-graph-outline:before { content: "\f120"; }
+.tristicon-heart:before { content: "\f121"; }
+.tristicon-home:before { content: "\f122"; }
+.tristicon-info:before { content: "\f123"; }
+.tristicon-instagram:before { content: "\f124"; }
+.tristicon-juice-outline:before { content: "\f125"; }
+.tristicon-life-saver:before { content: "\f126"; }
+.tristicon-linkedin:before { content: "\f127"; }
+.tristicon-linkedin-in:before { content: "\f155"; }
+.tristicon-loading:before { content: "\f128"; }
+.tristicon-lock:before { content: "\f129"; }
+.tristicon-made-with:before { content: "\f12a"; }
+.tristicon-mail:before { content: "\f12b"; }
+.tristicon-mango-chutney:before { content: "\f12c"; }
+.tristicon-map-marker:before { content: "\f154"; }
+.tristicon-medal:before { content: "\f12d"; }
+.tristicon-megaphone-outline:before { content: "\f12e"; }
+.tristicon-megaphone-solid:before { content: "\f12f"; }
+.tristicon-minus:before { content: "\f130"; }
+.tristicon-notepad:before { content: "\f131"; }
+.tristicon-open:before { content: "\f132"; }
+.tristicon-pen:before { content: "\f133"; }
+.tristicon-phone:before { content: "\f134"; }
+.tristicon-plane:before { content: "\f135"; }
+.tristicon-plus:before { content: "\f136"; }
+.tristicon-radial-bar-outline:before { content: "\f137"; }
+.tristicon-search:before { content: "\f14d"; }
+.tristicon-shirt:before { content: "\f138"; }
+.tristicon-shoe:before { content: "\f139"; }
+.tristicon-shopping-cart:before { content: "\f13a"; }
+.tristicon-star:before { content: "\f13b"; }
+.tristicon-star-alt:before { content: "\f13c"; }
+.tristicon-tea-cup:before { content: "\f13d"; }
+.tristicon-team:before { content: "\f13e"; }
+.tristicon-team-alt:before { content: "\f13f"; }
+.tristicon-team-outline:before { content: "\f140"; }
+.tristicon-time:before { content: "\f141"; }
+.tristicon-trash:before { content: "\f142"; }
+.tristicon-trash-alt:before { content: "\f143"; }
+.tristicon-trophy-outline:before { content: "\f144"; }
+.tristicon-twitter:before { content: "\f145"; }
+.tristicon-user:before { content: "\f146"; }
+.tristicon-user-add:before { content: "\f147"; }
+.tristicon-user-outline:before { content: "\f148"; }
+.tristicon-world:before { content: "\f149"; }
+.tristicon-youtube:before { content: "\f14a"; }
+
+$tristicon-apple: "\f100";
+$tristicon-briefcase: "\f101";
+$tristicon-briefcase-outline: "\f102";
+$tristicon-bubble: "\f103";
+$tristicon-burger: "\f104";
+$tristicon-calendar: "\f105";
+$tristicon-camera: "\f106";
+$tristicon-camera-solid: "\f107";
+$tristicon-check: "\f108";
+$tristicon-check-alt: "\f14b";
+$tristicon-check-circle: "\f109";
+$tristicon-chevron-down: "\f10a";
+$tristicon-chevron-down-alt: "\f14f";
+$tristicon-chevron-left: "\f10b";
+$tristicon-chevron-left-alt: "\f150";
+$tristicon-chevron-right: "\f10c";
+$tristicon-chevron-right-alt: "\f151";
+$tristicon-chevron-up: "\f10d";
+$tristicon-chevron-up-alt: "\f152";
+$tristicon-circle: "\f10e";
+$tristicon-cloud: "\f10f";
+$tristicon-coins: "\f110";
+$tristicon-comments: "\f14e";
+$tristicon-coupon: "\f111";
+$tristicon-credit-card: "\f112";
+$tristicon-cross: "\f113";
+$tristicon-cross-alt: "\f114";
+$tristicon-cross-circle: "\f115";
+$tristicon-cross-circle-alt: "\f116";
+$tristicon-dollar-dollar: "\f117";
+$tristicon-dollars: "\f118";
+$tristicon-download: "\f119";
+$tristicon-facebook: "\f11a";
+$tristicon-facebook-f: "\f14c";
+$tristicon-file-outline: "\f11b";
+$tristicon-file-solid: "\f11c";
+$tristicon-gear: "\f11d";
+$tristicon-gear-outline: "\f11e";
+$tristicon-gift: "\f153";
+$tristicon-graph: "\f11f";
+$tristicon-graph-outline: "\f120";
+$tristicon-heart: "\f121";
+$tristicon-home: "\f122";
+$tristicon-info: "\f123";
+$tristicon-instagram: "\f124";
+$tristicon-juice-outline: "\f125";
+$tristicon-life-saver: "\f126";
+$tristicon-linkedin: "\f127";
+$tristicon-linkedin-in: "\f155";
+$tristicon-loading: "\f128";
+$tristicon-lock: "\f129";
+$tristicon-made-with: "\f12a";
+$tristicon-mail: "\f12b";
+$tristicon-mango-chutney: "\f12c";
+$tristicon-map-marker: "\f154";
+$tristicon-medal: "\f12d";
+$tristicon-megaphone-outline: "\f12e";
+$tristicon-megaphone-solid: "\f12f";
+$tristicon-minus: "\f130";
+$tristicon-notepad: "\f131";
+$tristicon-open: "\f132";
+$tristicon-pen: "\f133";
+$tristicon-phone: "\f134";
+$tristicon-plane: "\f135";
+$tristicon-plus: "\f136";
+$tristicon-radial-bar-outline: "\f137";
+$tristicon-search: "\f14d";
+$tristicon-shirt: "\f138";
+$tristicon-shoe: "\f139";
+$tristicon-shopping-cart: "\f13a";
+$tristicon-star: "\f13b";
+$tristicon-star-alt: "\f13c";
+$tristicon-tea-cup: "\f13d";
+$tristicon-team: "\f13e";
+$tristicon-team-alt: "\f13f";
+$tristicon-team-outline: "\f140";
+$tristicon-time: "\f141";
+$tristicon-trash: "\f142";
+$tristicon-trash-alt: "\f143";
+$tristicon-trophy-outline: "\f144";
+$tristicon-twitter: "\f145";
+$tristicon-user: "\f146";
+$tristicon-user-add: "\f147";
+$tristicon-user-outline: "\f148";
+$tristicon-world: "\f149";
+$tristicon-youtube: "\f14a";
