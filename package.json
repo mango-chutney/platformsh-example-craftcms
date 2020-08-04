@@ -1,0 +1,27 @@
+{
+  "name": "tristicons",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "lint": "./scripts/run-prettier.sh",
+    "start": "fontcustom compile --force && ./scripts/get-base64-respresentations.js && ./scripts/run-prettier.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mango-chutney/tristicons.git"
+  },
+  "author": "Mango Chutney <team@mangochutney.com.au>",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "prettier": {
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "prettier": "^1.13.7"
+  }
+}

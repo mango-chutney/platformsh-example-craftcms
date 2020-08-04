@@ -1,0 +1,1 @@
+<%= URI.decode(ERB::Util.url_encode(JSON.pretty_generate(@glyphs.map { |name, value| [name.to_s, "\\#{value[:codepoint].to_s(16)}" ] }.to_h)).gsub("%5C%5C", "%5C")) %>

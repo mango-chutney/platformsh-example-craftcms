@@ -1,0 +1,234 @@
+.tristicon {
+  display: inline-block;
+  font: normal normal normal 1 tristicons;
+  font-size: inherit;
+  text-rendering: auto;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tristicon-apple:before {
+  content: '\f121';
+}
+.tristicon-briefcase:before {
+  content: '\f12e';
+}
+.tristicon-briefcase-outline:before {
+  content: '\f142';
+}
+.tristicon-bubble:before {
+  content: '\f100';
+}
+.tristicon-burger:before {
+  content: '\f127';
+}
+.tristicon-calendar:before {
+  content: '\f115';
+}
+.tristicon-camera:before {
+  content: '\f116';
+}
+.tristicon-camera-solid:before {
+  content: '\f128';
+}
+.tristicon-check:before {
+  content: '\f13c';
+}
+.tristicon-check-circle:before {
+  content: '\f101';
+}
+.tristicon-chevron-down:before {
+  content: '\f102';
+}
+.tristicon-chevron-left:before {
+  content: '\f103';
+}
+.tristicon-chevron-right:before {
+  content: '\f104';
+}
+.tristicon-chevron-up:before {
+  content: '\f105';
+}
+.tristicon-circle:before {
+  content: '\f106';
+}
+.tristicon-cloud:before {
+  content: '\f123';
+}
+.tristicon-coins:before {
+  content: '\f12c';
+}
+.tristicon-coupon:before {
+  content: '\f12f';
+}
+.tristicon-credit-card:before {
+  content: '\f11b';
+}
+.tristicon-cross:before {
+  content: '\f107';
+}
+.tristicon-cross-alt:before {
+  content: '\f13d';
+}
+.tristicon-cross-circle:before {
+  content: '\f108';
+}
+.tristicon-cross-circle-alt:before {
+  content: '\f13e';
+}
+.tristicon-dollar-dollar:before {
+  content: '\f134';
+}
+.tristicon-dollars:before {
+  content: '\f117';
+}
+.tristicon-download:before {
+  content: '\f13f';
+}
+.tristicon-facebook:before {
+  content: '\f109';
+}
+.tristicon-file-outline:before {
+  content: '\f13a';
+}
+.tristicon-file-solid:before {
+  content: '\f13b';
+}
+.tristicon-gear:before {
+  content: '\f136';
+}
+.tristicon-gear-outline:before {
+  content: '\f144';
+}
+.tristicon-graph:before {
+  content: '\f130';
+}
+.tristicon-graph-outline:before {
+  content: '\f145';
+}
+.tristicon-heart:before {
+  content: '\f125';
+}
+.tristicon-home:before {
+  content: '\f131';
+}
+.tristicon-info:before {
+  content: '\f12b';
+}
+.tristicon-instagram:before {
+  content: '\f140';
+}
+.tristicon-juice-outline:before {
+  content: '\f146';
+}
+.tristicon-life-saver:before {
+  content: '\f10a';
+}
+.tristicon-linkedin:before {
+  content: '\f129';
+}
+.tristicon-loading:before {
+  content: '\f114';
+}
+.tristicon-lock:before {
+  content: '\f10b';
+}
+.tristicon-made-with:before {
+  content: '\f10c';
+}
+.tristicon-mail:before {
+  content: '\f10d';
+}
+.tristicon-mango-chutney:before {
+  content: '\f10e';
+}
+.tristicon-medal:before {
+  content: '\f14e';
+}
+.tristicon-megaphone-outline:before {
+  content: '\f11c';
+}
+.tristicon-megaphone-solid:before {
+  content: '\f11d';
+}
+.tristicon-minus:before {
+  content: '\f141';
+}
+.tristicon-notepad:before {
+  content: '\f119';
+}
+.tristicon-open:before {
+  content: '\f10f';
+}
+.tristicon-pen:before {
+  content: '\f110';
+}
+.tristicon-phone:before {
+  content: '\f111';
+}
+.tristicon-plane:before {
+  content: '\f147';
+}
+.tristicon-plus:before {
+  content: '\f137';
+}
+.tristicon-radial-bar-outline:before {
+  content: '\f148';
+}
+.tristicon-shirt:before {
+  content: '\f11e';
+}
+.tristicon-shoe:before {
+  content: '\f12d';
+}
+.tristicon-shopping-cart:before {
+  content: '\f11a';
+}
+.tristicon-star:before {
+  content: '\f126';
+}
+.tristicon-star-alt:before {
+  content: '\f138';
+}
+.tristicon-tea-cup:before {
+  content: '\f11f';
+}
+.tristicon-team:before {
+  content: '\f122';
+}
+.tristicon-team-alt:before {
+  content: '\f132';
+}
+.tristicon-team-outline:before {
+  content: '\f149';
+}
+.tristicon-time:before {
+  content: '\f139';
+}
+.tristicon-trash:before {
+  content: '\f112';
+}
+.tristicon-trash-alt:before {
+  content: '\f14a';
+}
+.tristicon-trophy-outline:before {
+  content: '\f14b';
+}
+.tristicon-twitter:before {
+  content: '\f113';
+}
+.tristicon-user:before {
+  content: '\f120';
+}
+.tristicon-user-add:before {
+  content: '\f14c';
+}
+.tristicon-user-outline:before {
+  content: '\f14d';
+}
+.tristicon-world:before {
+  content: '\f133';
+}
+.tristicon-youtube:before {
+  content: '\f12a';
+}
