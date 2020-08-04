@@ -1,0 +1,43 @@
+{
+  "name": "udf-mapper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "bin": {
+    "udf-mapper": "./bin/cli.js"
+  },
+  "scripts": {
+    "check": "flow check",
+    "eslint": "eslint --config .eslintrc.json \"./lib/**/*.js\" \"./bin/**/*.js\" ./index.js",
+    "precommit": "lint-staged",
+    "prettier": "prettier-eslint --write \"./lib/**/*.js\"  \"./bin/**/*.js\" ./index.js",
+    "lint": "npm-run-all prettier eslint"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier",
+      "eslint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "caseless": "^0.12.0",
+    "flow-bin": "^0.53.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
+    "yargs": "^6.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0 || ^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "flow-typed": "^2.1.5",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
+    "npm-run-all": "^4.0.2",
+    "prettier-eslint-cli": "^4.2.1"
+  }
+}
