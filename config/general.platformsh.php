@@ -18,4 +18,6 @@ if (isset($_ENV['PLATFORM_ROUTES'])) {
             $settings['*']['siteUrl'] = $host;
         }
     }
+
+    $settings['*']['allowAdminChanges'] = false;
 }
